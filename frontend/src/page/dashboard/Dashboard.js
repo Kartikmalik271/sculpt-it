@@ -4,8 +4,8 @@ import TodoItem from '../../components/dashboard/TodoItem';
 import TodoService from '../../utils/TodoService';
 import Message from '../../components/Message';
 
-import {Link} from 'react-router-dom';
-import Auth from '../../utils/Auth';
+//import {Link} from 'react-router-dom';
+//import Auth from '../../utils/Auth';
 import { AuthContext } from '../../context/AuthContext'
 import kartik from '../../assets/dashboard/img/kartik.jpg';
 import './dashboard.css';
