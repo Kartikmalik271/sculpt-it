@@ -1,0 +1,255 @@
+
+    .main-navbar{
+        color: white;
+        
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        z-index: 100;
+    }
+
+.main-navbar .nav-item{
+    padding: 10px;
+}
+.main-navbar .nav-item .navbar-btn-half{
+    outline: none;
+}
+
+.homepage-main img.mainimage{
+    width:100%;
+    height: 100vh;
+    
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    z-index: 50;
+}
+
+.homepage-main-display{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    z-index: 3;
+}
+
+.homepage-main-display-rhs{
+  border: 2px solid white;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-color: #0006;
+  box-shadow: 0 5px 28px grey;
+
+}
+.homepage-main-display-rhs:hover{
+    border: none;
+    box-shadow: 0 5px 28px white;
+}
+.loginform{
+    border: none;
+    border-bottom: 4px solid white;
+    padding: 10px;
+    color: white;
+    outline: none;
+    background-color:transparent;
+}
+.loginform::placeholder{
+    color: rgb(214, 214, 214);
+}
+.homepagelogin-btn-half{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(35, 108, 168);
+    box-shadow: 2px 2px 4px black;
+}
+.homepagelogin-btn-half:hover{
+    background-color: rgb(25, 74, 114);
+    color: white;
+}
+.homepage-main-display-lhs h1, .homepage-main-display-lhs h2{
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+}
+
+.homepage-main-display-rhs p{
+    
+    color: white;
+}
+@media (max-width:768px){
+    .homepage-main-display {
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 2%;
+         
+
+    }
+}
+.modal-btn-half{
+    background-color:#0007;
+    color: white;
+    font-weight: bolder;
+    z-index: 3;
+    margin-left: 0px;
+}
+.modal-btn-half:hover{
+    color: white;
+    box-shadow:0 0 20px white ;
+}
+.modalmain{
+    z-index: 3;
+}
+
+.joinus{
+    padding: 20px;
+    background-color: rgb(39, 55, 100);
+    color: white;
+    font-weight: bolder;
+}
+.modal-para{
+    color: rgb(184, 184, 184);
+    font-weight: lighter;
+}
+.modal-header , .modal-footer{
+    
+    text-align: center;
+    background-color: rgba(15, 109, 76, 0.856);
+    
+}
+.signupform{
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 1px 5px black;
+}
+.homepagesignup-btn-half{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(168, 35, 35);
+    box-shadow: 2px 2px 4px black;
+}
+.homepage-aboutcard h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    text-align: center;
+}
+.homepage-aboutcard p{
+    text-align: center;
+}
+.homepage-aboutcard-lhs{
+    border: 1px solid rgb(241, 241, 241) ;
+    box-shadow:0px 5px 30px #f0f0f0;
+    border-radius: 5px;
+    border-top-left-radius: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.homepage-aboutcard-mid{
+    border: 1px solid rgb(241, 241, 241) ;
+    box-shadow:0px 5px 30px #f0f0f0;
+    border-radius: 5px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.homepage-aboutcard-rhs{
+    border: 1px solid rgb(241, 241, 241) ;
+    box-shadow:0px 5px 30px #f0f0f0;
+    border-radius: 5px;
+    border-bottom-right-radius: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.homepage-about-img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    text-align: center;  
+    margin-top:-24%;
+   
+}
+.homepage-about-head-circle{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    padding-top:21px ;
+    background-color: rgb(255, 254, 254) ;
+    text-align: center;  
+    margin-top:-24%;
+    border: 6px solid #267891;
+    color: #267891;
+}
+@media (max-width:767px){
+    .homepage-about-img{
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        text-align: center;  
+        margin-top:-37%;
+       
+    }
+    .homepage-about-head-circle{
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        padding-top:21px ;
+        background-color: rgb(255, 254, 254) ;
+        text-align: center;  
+        margin-top:-37%;
+        border: 6px solid #267891;
+        color: #267891;
+    }
+}
+.footer{
+    z-index: 100;
+    background-color: rgb(39, 55, 100);
+    box-shadow: 1px 1px 15px grey;
+    
+}
+.footer-container{
+    background-color: white;
+    
+}
+.footer-container .footer-form input{
+    
+    padding: 8px;
+    outline: none;
+    border:1px solid rgb(104, 103, 103);
+    border-radius: 10px;
+    margin: 10px;
+
+}
+.footer-container .footer-form textarea{
+    
+    padding: 8px;
+    outline: none;
+    border:1px solid rgb(104, 103, 103);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.footer-form-btn-half{
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(0, 119, 255);
+}
+.footerlinks{
+    color:black;
+}
+.homepage-contact-delatils{
+    text-align: center;
+}
