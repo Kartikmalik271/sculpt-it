@@ -22,9 +22,13 @@ const Register = (props) => {
                     <div className="row align-items-center">
                         <div className=" col-11 col-md-4 offset-md-1 ">
                             <Slide bottom><h1>Join Us</h1></Slide>
-                            <Slide bottom><p>
-                            By registering here you'll be able to use our services and able to create your own personal portfolio, your portfolio will be a professional one, Create Persoanlize and campare.        
-                            </p></Slide>
+                            <Slide bottom><form >
+                                    <input className="col-12 mb-2 signupform"type="text"   name="username" placeholder="Enter Username" required="required" />
+                                    <input className="col-12 mb-3 signupform"type="password"   name="password" placeholder="Enter Password" required="required" />
+
+                                    <button type="submit" className="btn col-6 homepagesignup-btn-half">Register</button>
+
+                                </form></Slide>
                             <Modal/>
                         </div>
                         <div className="col-12 col-md-7 mt-3">

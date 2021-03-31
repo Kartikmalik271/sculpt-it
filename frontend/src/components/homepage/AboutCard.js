@@ -14,13 +14,6 @@ const AboutCard = (props) => {
                         <Slide bottom><h2>About Us</h2></Slide>
                         <Slide bottom><p>portfolio.com is a all in one solution for managing and making professional and presentable portfolio of users. You can also share and compare your profile with others</p></Slide>
                     </div></Roll>
-                    <Roll bottom><div className="col-8 col-md-3 m-3  homepage-aboutcard-mid">
-                        <div className="row justify-content-center">
-                          <img className="homepage-about-img" src={kartik}  alt=""/>
-                        </div>
-                        <Slide bottom><h2>Kartik Malik</h2></Slide>
-                        <Slide bottom><p>I'm a CSE student of batch 2019-2013 at Chandigarh University. Till now have skill set of Full-stack web developer and two internship experience in frontend web development</p></Slide>
-                    </div></Roll>
                     <Roll right><div className="col-8 col-md-3 m-3  homepage-aboutcard-rhs">
                         <div className="row justify-content-center">
                             <h5 className="homepage-about-head-circle">Project</h5>

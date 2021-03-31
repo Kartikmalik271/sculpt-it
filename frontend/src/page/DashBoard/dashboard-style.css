@@ -1,0 +1,66 @@
+.background {
+  
+}
+
+.App {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.date {
+  width: 100%;
+  margin-top: 20px;
+}
+@media (max-width: 763px) {
+  .content-tag {
+    padding-left: 15%;
+  }
+}
+.date h7 {
+  font-weight: bold;
+}
+.date p {
+  float: right;
+  font-weight: bold;
+}
+/*main dashboard*/
+
+.head-card-main {
+  margin-top: 10%;
+  background-color: #4c45b2;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px black;
+}
+
+.head-card-main .head {
+  padding: 15px 10px 10px;
+  color: white;
+}
+
+.head-card-fav {
+  margin-top: 10%;
+  background-color: #8874e7;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px black;
+  
+}
+
+
+.head-card-fav .head {
+  padding: 15px 10px 10px;
+  color: white;
+}
+
+
+
+.profile-head-card .head {
+  padding: 15px 10px 10px;
+  color: white;
+}
+.profile-head-card {
+  margin-top: 10%;
+  background-color: #070e56;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px black;
+}
