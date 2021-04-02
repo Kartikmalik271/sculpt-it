@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './new-left-side-bar-style.css';
+import {Redirect} from 'react-router-dom'
 
 import { Link } from 'react-router-dom';
 
@@ -7,10 +8,21 @@ import DashBoardSVG from './DashboardSVG';
 import FavoriteSVG from './FavoriteSVG';
 import ProfileSVG from './ProfileSVG';
 import SettingSVG from './SettingSVG';
+import {logout} from '../../../actions/auth'
+import {connect} from 'react-redux'
 
 import UpdateApp from './UpdateApp';
 
-const NewLeftSideBar = () => {
+const NewLeftSideBar = ({logout,isAuthenticated}) => {
+  const onClick = e => {
+    e.preventDefault();
+    logout();
+    if (isAuthenticated)
+      return null
+    else
+     return <Redirect to="/"/>;
+};
+  
   function handleSideNavBarHide() {
     document.getElementById('sidebar').classList.toggle('active');
     this.classList.toggle('active');
@@ -21,6 +33,9 @@ const NewLeftSideBar = () => {
     document.getElementById('sidebarCollapse').classList.toggle('active');
     console.log('inside1');
   }
+  
+    
+
   useEffect(() => {
     document
       .getElementById('sidebarCollapse')
@@ -37,6 +52,8 @@ const NewLeftSideBar = () => {
       document.removeEventListener('click', handleSideNavBarHide2);
     };
   }, []);
+
+  
 
   return (
     <div className="col-2">
@@ -111,6 +128,22 @@ const NewLeftSideBar = () => {
                 </h6>
               </li>
             </Link>
+            <Link
+              to="#"
+              className="collapse-sidebar-on-click"
+            >
+              <li className="d-flex align-items-center mb-4  justify-content-start">
+                <span>
+                  <SettingSVG
+                    fill="#b1b1b1"
+                    className="dashboard-svg mr-2 mr-md-3"
+                  />
+                </span>
+                <a onClick={e =>onClick(e)}><h6 className="text--cstm-m-0 db-nav-color--secondary ">
+                  Logout
+                </h6></a>
+              </li>
+            </Link>
           </ul>
          
         </nav>
@@ -132,5 +165,8 @@ const NewLeftSideBar = () => {
     </div>
   );
 };
+const mapStateToProps = state =>({
+  isAuthenticated: state.auth.isAuthenticated
+});
 
-export default NewLeftSideBar;
+export default connect(mapStateToProps, {logout})(NewLeftSideBar);

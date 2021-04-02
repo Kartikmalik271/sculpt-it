@@ -40,6 +40,7 @@ switch (currDay) {
       <div className="row align-items-center">
         <h5 className="pl-4 py-2">{currDate} {currMonth} {currYear} ,{day}</h5>
       </div>
+      
     </nav>
   );
 };

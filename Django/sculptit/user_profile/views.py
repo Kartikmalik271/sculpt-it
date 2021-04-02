@@ -54,7 +54,6 @@ class GetArticleList(APIView):
         try:
             user = self.request.user
             username=user.username
-
             
             author= User.objects.get(id=user.id)
             user_article = UserArticle.objects.filter(user=user.id)

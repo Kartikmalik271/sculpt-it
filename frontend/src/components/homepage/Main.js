@@ -1,15 +1,38 @@
-import React from 'react';
-
-
-
+import React,{useState} from 'react';
+import {Redirect} from 'react-router-dom'
 import Typewriter from 'typewriter-effect';
 import mainimg from '../../assets/homepage/img/mainbg.png'
 import Roll from 'react-reveal/Roll'
 import Fade from 'react-reveal/Fade'
 import Navbar from './Navbar';
+import { login } from '../../actions/auth'
+import {connect} from 'react-redux'
+import CSRFToken from '../CSRFToken'
 
 
-const Main = (props) => {
+const Main = ({login, isAuthenticated}) => {
+
+    const [formData, setFormData] = useState({
+        username:'',
+        password:''
+        
+    });
+
+    const {username, password} = formData;
+
+
+    const onChange = e => setFormData({ ...formData, [e.target.name]:e.target.value });
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+            login(username, password);
+            
+    };
+
+    if (isAuthenticated)
+        return <Redirect to='/dashboard'/>;
+
     
     return ( 
         <div className=" homepage-main"  >
@@ -27,9 +50,24 @@ const Main = (props) => {
                             </div>
 
                             <Roll right><div className=" col-10 col-lg-4   homepage-main-display-rhs">
-                                <form >
-                                        <Fade bottom><input className="col-12 mb-2 loginform"  type="text" name="username" placeholder="Username"  required="required" autofocus/></Fade>
-                                        <Fade bottom><input className="col-12 mb-3 loginform"  type="password" name="password" placeholder="Password" required="required" /></Fade>
+                                <form onSubmit={e =>onSubmit(e)}>
+                                        <CSRFToken/>
+                                        <Fade bottom><input className="col-12 mb-2 loginform"  
+                                                            type="text" 
+                                                            name="username" 
+                                                            placeholder="Username"
+                                                            onChange = {e => onChange(e)} 
+                                                            value={username}  
+                                                            required="required" 
+                                                            /></Fade>
+                                        <Fade bottom><input className="col-12 mb-3 loginform"  
+                                                            type="password" 
+                                                            name="password" 
+                                                            placeholder="Password"
+                                                            onChange = {e => onChange(e)} 
+                                                            value={password} 
+                                                            required="required" 
+                                                            /></Fade>
                                         <Fade bottom><button type="submit" className="btn col-6 homepagelogin-btn-half">SignIn.</button></Fade>
 
                                 </form>
@@ -45,6 +83,10 @@ const Main = (props) => {
             
         </div>
      );
-}
+};
 
-export default Main;
+const mapStateToProps = state =>({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {login})(Main);
