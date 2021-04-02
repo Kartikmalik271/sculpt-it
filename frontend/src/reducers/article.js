@@ -25,14 +25,14 @@ export default function(state = initialState, action) {
             case LOAD_USER_ARTICLE_FAIL:
                 return state
             case DELETE_USER_ARTICLE_SUCCESS:
-                return{
+                return {
                     ...state,
                     article: state.article.filter(articles => articles.id !== action.payload)
                 };
             case DELETE_USER_ARTICLE_FAIL:
                 return state
             case ADD_USER_ARTICLE_SUCCESS:
-                return{
+                return {
                     ...state,
                     article: [...state.article, action.payload]
                 };

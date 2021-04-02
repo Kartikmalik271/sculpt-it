@@ -24,7 +24,7 @@ const AddArticle = ({ addArticle}) => {
 
     const onSubmit = e => {
         e.preventDefault();
-            addArticle(title, contenttype, description, look);
+        addArticle(title, contenttype, description, look);
     };
 
     
@@ -71,6 +71,8 @@ const AddArticle = ({ addArticle}) => {
             </div>
      );
 }
- 
+AddArticle.propTypes={
+    addArticle: PropTypes.func.isRequired
+ };
 export default connect(null, {addArticle })(AddArticle);
 

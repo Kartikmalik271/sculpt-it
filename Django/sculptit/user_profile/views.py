@@ -80,7 +80,9 @@ class PostArticleList(APIView):
             article_list=UserArticle(user=user, title=title, contenttype=contenttype, description=description, look=look)
             article_list.save()
 
-            return Response({'success':'article added','username':str(username)})
+            user_article = UserArticleSerializer(article_list)
+
+            return Response(user_article.data )
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
@@ -120,5 +122,6 @@ class UserArticleDetails(APIView):
     def delete(self, request, id):
         articles = self.get_object(id)
         articles.delete()
+        
         return Response(status=status.HTTP_204_NO_CONTENT)
        
