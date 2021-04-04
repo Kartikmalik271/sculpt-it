@@ -8,10 +8,12 @@ import Navbar from './Navbar';
 import { login } from '../../actions/auth'
 import {connect} from 'react-redux'
 import CSRFToken from '../CSRFToken'
+import { useAlert} from 'react-alert'
 
 
-const Main = ({login, isAuthenticated}) => {
-
+const Main = ({ login, isAuthenticated}) => {
+    const alert = useAlert()
+    const [check , setCheck]= useState(null)
     const [formData, setFormData] = useState({
         username:'',
         password:''
@@ -27,11 +29,20 @@ const Main = ({login, isAuthenticated}) => {
         e.preventDefault();
 
             login(username, password);
+            setCheck(true);
             
     };
 
-    if (isAuthenticated)
+    if (isAuthenticated && check){
+        alert.success('LOGGED IN');
         return <Redirect to='/dashboard'/>;
+    }
+     if (!isAuthenticated && check){
+        alert.show('IF FAILED ENTER ')
+        alert.show("VALID DETAILS AFTER 10'S")
+        setCheck(null);
+
+    }
 
     
     return ( 

@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useHistory } from "react-router-dom"
+
 
 // import LeftSideBar from './left-sidebar/LeftSideBar';
 import RightSideBar from '../../components/user-dashboard/right-sidebar/RightSideBar';
@@ -13,18 +15,19 @@ import Favorite from '../../components/user-dashboard/FavoriteDashBoard';
 import './dashboard-style.css';
 
 const Dashboard = () => {
+  const history = useHistory();
   return (
     <div className="background">
       <div className="col-12">
       <div className="row  ">
-        <Router>
+        <Router history= {history}>
           <NewLeftSideBar />
           <div id="main-content" className="col-8 px-5">
             <Switch>
-              <Route exact path="/dashboard/" component={MainDashBoard} />
-              <Route exact path="/dashboard/profile" component={Profile} />
-              <Route exact path="/dashboard/favorite" component={Favorite} />
-              <Route exact path="/dashboard/settings" component={Settings} />
+              <Route exact path="/dashboard" component={MainDashBoard} />
+              <Route  path="/dashboard/profile" component={Profile} />
+              <Route  path="/dashboard/favorite" component={Favorite} />
+              <Route  path="/dashboard/settings" component={Settings} />
 
             </Switch>
           </div>

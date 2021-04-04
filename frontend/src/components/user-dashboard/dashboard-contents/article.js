@@ -48,11 +48,13 @@ const Article = ({loadArticle, article, deleteArticle}) => {
             </div>
      );
 }
+
  Article.propTypes={
     article: PropTypes.array.isRequired
  }
 const mapStateToProps = state =>({
     article: state.article.article
+   
 });
-export default connect(mapStateToProps, { loadArticle, deleteArticle })(Article);
+export default connect(mapStateToProps, { loadArticle, deleteArticle})(Article);
 

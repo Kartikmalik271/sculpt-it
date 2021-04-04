@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import {load_user} from './profile';
-import {loadArticle} from './article'
 import { 
     REGISTER_SUCCESS, 
     REGISTER_FAIL,

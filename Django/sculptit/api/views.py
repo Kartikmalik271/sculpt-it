@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from django.contrib.auth.models import User
-from rest_framework import permissions
+from rest_framework import permissions, status
 from rest_framework.response import Response
 from user_profile.models import UserProfile
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
@@ -16,11 +16,11 @@ class CheckAuthenticatedView(APIView):
             isAuthenticated = User.is_authenticated
             
             if isAuthenticated:
-                return Response({'success':'isAuthenticated'})
+                return Response({'success':'isAuthenticated'},status=status.HTTP_200_OK )
             else:
-                return Response({'error':'isAuthenticated'})
+                return Response({'error':'isAuthenticated'}, status=status.HTTP_400_BAD_REQUEST)
         except:
-            return Response({'error':'something went wrong'})
+            return Response({'error':'something went wrong'},status=status.HTTP_400_BAD_REQUEST)
 
 @method_decorator(csrf_protect, name='dispatch')
 class SignupView(APIView):
@@ -33,6 +33,7 @@ class SignupView(APIView):
         password = data['password']
         re_password = data['re_password']
 
+
         try:
             if password == re_password:
                 if User.objects.filter(username=username).exists():
@@ -44,7 +45,7 @@ class SignupView(APIView):
                         user = User.objects.create_user(username=username, password=password)
                         user.save()
                         user = User.objects.get(id=user.id)
-                        user_profile= UserProfile(user=user ,first_name='', lastt_name='',phone='',college='')
+                        user_profile= UserProfile(user=user ,first_name='', lastt_name='',phone='',college='',status='',city='',linkedin='',email='',about='',we1='',wed1='',wel11='',wep12='',wep13='',wep14='',wep15='',we2='',wed2='',wel21='',wep22='',wep23='',wep24='',wep25='',we3='',wed3='',wel31='',wep32='',wep33='',wep34='',wep35='',class10='',class10marks='',class12='',class12marks='',collegemarks='',skill1='',skill2='',skill3='',skill4='',skill5='',skill6='',skill7='',skill8='',skill9='',skill10='',hna1='',hna2='',hna3='',hna4='',hna5='',lang1='',lang2='',lang3='',lang4='',lang1p='',lang2p='',lang3p='',lang4p='')
                         user_profile.save()
 
                         return Response({'success':'user created successfully'})
@@ -89,6 +90,7 @@ class GetCSRFToken(APIView):
 
     def get(self, request, format=None):
         return Response({'success':'CSRF cookie set'})
+
 
 class GetUsersView(APIView):
     permission_classes = (permissions.AllowAny, )

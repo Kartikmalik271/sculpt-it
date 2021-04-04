@@ -7,7 +7,8 @@ import {
    DELETE_USER_ARTICLE_SUCCESS,
    DELETE_USER_ARTICLE_FAIL,
    ADD_USER_ARTICLE_SUCCESS,
-   ADD_USER_ARTICLE_FAIL
+   ADD_USER_ARTICLE_FAIL,
+   ALL_USERS
 
 } from './types';
 
@@ -37,6 +38,26 @@ export const loadArticle = () => dispatch => {
             
         });
     }
+};
+
+export const allUser = () => dispatch => {
+    const config = {
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+
+        }
+    };
+
+        axios
+        .get(`${process.env.REACT_APP_API_URL}/account/get_users`, config)
+        .then(res =>{
+            dispatch({
+                type: ALL_USERS,
+                payload: res.data
+            });
+        })
+        .catch(err => console.log(err));
 };
 
 export const deleteArticle = id => dispatch => {

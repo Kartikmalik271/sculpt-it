@@ -1,5 +1,6 @@
 import React from 'react';
 import Profileheadcard from './dashboard-contents/profileheadcard';
+import Resume from './dashboard-contents/resume';
 
 
 const currDate = new Date().getDate();
@@ -55,7 +56,7 @@ const Profile = () => {
             </p>
           </div>
           <Profileheadcard greet={greet} />
-      
+          <Resume/>
         </div>
       </div>
     </div>
