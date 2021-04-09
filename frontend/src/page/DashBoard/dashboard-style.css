@@ -1,6 +1,4 @@
-.background {
-  
-}
+
 
 .App {
   width: 100%;
@@ -39,8 +37,8 @@
 }
 
 .head-card-fav {
-  margin-top: 10%;
-  background-color: #8874e7;
+  margin-top: 5%;
+  background-color: #3c9e84;
   border-radius: 25px;
   box-shadow: 2px 2px 3px black;
   
@@ -52,15 +50,128 @@
   color: white;
 }
 
-
-
-.profile-head-card .head {
-  padding: 15px 10px 10px;
-  color: white;
-}
 .profile-head-card {
-  margin-top: 10%;
+  margin-top: 5%;
   background-color: #070e56;
+  color: white;
   border-radius: 25px;
   box-shadow: 2px 2px 3px black;
+}
+
+.profilemaincard .profilemaincard-lhs-about{
+  border-radius: 17px;
+  box-shadow: 0px 12px 10px  rgb(221, 221, 221);
+  background-color: white;
+  
+}
+.profilemaincard .profilemaincard-rhs-education{
+  border-radius: 17px;
+  box-shadow: 0px 12px 10px  rgb(221, 221, 221);
+  background-color: white;
+  
+}
+.profilemaincard h2{
+  text-decoration: underline rgb(165, 42, 69);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.profilemaincard p{
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.greybox{
+  background-color: #fdfdfd;
+}
+.secondary-school{
+  border-radius: 15px;
+  background-color: rgb(255, 205, 230);
+  text-align: center;
+}
+.secondary-school h4 h5 ,.high-school h4 h5 ,.college-school h4 h5 {
+  color:rgb(43, 43, 43);
+}
+.fa-graduation, .fa-school{
+ color:rgb(75, 75, 75)
+}
+.secondary-school p , .high-school p , .college-school p {
+  color:rgb(97, 97, 97);
+}
+.high-school{
+  border-radius: 15px;
+ 
+  background-color: rgb(253, 252, 169);
+  text-align: center;
+
+}
+.college-school{
+  border-radius: 15px;
+ 
+  background-color: peachpuff;
+  text-align: center;
+
+}
+.resume-profile-form input{
+  margin-bottom: 5px;
+  border-radius: 7px;
+  border: solid 1px grey;
+}
+
+.profilecardmain-skills-btn{
+  background: #388697;
+  color: white;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 10px  rgb(221, 221, 221);
+}
+.profilecardmain-interest-btn{
+  background: #204e4a;
+  color: white;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 10px  rgb(221, 221, 221);
+
+}
+.profilemaincard-rhs-we p{
+  color: grey;
+}
+.profilemaincard-rhs-we h5 ,.profilemaincard-rhs-we h6{
+  color: rgb(100, 100, 100);
+}
+
+.resumebox-headbox{
+  background-color: #20a39e;
+  color: white;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+.resume-box-social{
+  text-align: end;
+}
+.resumebox-skills h3{
+  border-bottom: solid 2px #08415c;
+}
+.resumebox-edu{
+  border-left: dotted 2px #cee1e7;
+}
+.resumebox-edu-head{
+  border-left: solid 5px #03c2e4;
+  
+  background-color: #c1eff7;
+}
+.article-head-card{
+  background-color: #f8f1e4;
+  border-radius: 15px;
+  box-shadow: 0px 12px 10px  rgb(221, 221, 221);
+
+
+}
+.btn-delete{
+  border-radius: 4px;
+  color:white;
+  float: right;
+
+}
+.btn-delete:hover{
+  box-shadow: 2px 2px 3px #ab2346;
 }

@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom"
 
 
 // import LeftSideBar from './left-sidebar/LeftSideBar';
-import RightSideBar from '../../components/user-dashboard/right-sidebar/RightSideBar';
 import NewLeftSideBar from '../../components/user-dashboard/left-sidebar/NewLeftSideBar';
 
 import Profile from '../../components/user-dashboard/ProfileDashBoard';
@@ -22,7 +21,7 @@ const Dashboard = () => {
       <div className="row  ">
         <Router history= {history}>
           <NewLeftSideBar />
-          <div id="main-content" className="col-8 px-5">
+          <div id="main-content" className="col-12 col-lg-10 px-lg-5">
             <Switch>
               <Route exact path="/dashboard" component={MainDashBoard} />
               <Route  path="/dashboard/profile" component={Profile} />
@@ -31,8 +30,6 @@ const Dashboard = () => {
 
             </Switch>
           </div>
-
-          <RightSideBar />
         </Router>
       </div>
       </div>

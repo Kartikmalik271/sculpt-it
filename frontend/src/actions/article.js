@@ -8,7 +8,9 @@ import {
    DELETE_USER_ARTICLE_FAIL,
    ADD_USER_ARTICLE_SUCCESS,
    ADD_USER_ARTICLE_FAIL,
-   ALL_USERS
+   ALL_USERS,
+   LOAD_ALL_ARTICLE_SUCCESS,
+   LOAD_ALL_ARTICLE_FAIL
 
 } from './types';
 
@@ -39,6 +41,34 @@ export const loadArticle = () => dispatch => {
         });
     }
 };
+
+export const loadAllArticle = () => dispatch => {
+    const config = {
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+
+        }
+    };
+    try{
+        axios
+        .get(`${process.env.REACT_APP_API_URL}/profile/getallarticle`, config)
+        .then(res =>{
+            dispatch({
+                type: LOAD_ALL_ARTICLE_SUCCESS,
+                payload: res.data
+            });
+        })
+        .catch(err => console.log(err));
+
+    }catch (err){
+        dispatch({
+            type:LOAD_ALL_ARTICLE_FAIL
+            
+        });
+    }
+};
+
 
 export const allUser = () => dispatch => {
     const config = {

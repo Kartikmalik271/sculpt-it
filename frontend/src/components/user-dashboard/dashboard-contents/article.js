@@ -1,6 +1,6 @@
 import React, {Component, useEffect, useState} from "react";
 import { connect } from 'react-redux'
-import  {loadArticle, deleteArticle}  from '../../../actions/article'
+import  {  loadAllArticle}  from '../../../actions/article'
 import PropTypes from 'prop-types'
 
 
@@ -8,40 +8,37 @@ import PropTypes from 'prop-types'
 
 
 
-const Article = ({loadArticle, article, deleteArticle}) => {
+const Article = ({ allarticle, loadAllArticle}) => {
     
     useEffect(() =>{
-        loadArticle();
+        loadAllArticle();
        
     },[]);
 
     
     return ( 
-        <div>
+        <div className="col-12">
                 <h1>article</h1>
                 
-                   <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>title</th>
-                                    <th>type</th>
-                                    <th>descp</th>
-                                    <th>view</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            { 
-                                article.map(articles =>(
-                                <tr key={articles.id}>
-                                    <td>{articles.title}</td>
-                                    <td>{articles.contenttype}</td>
-                                    <td>{articles.description}</td>
-                                    <td>{articles.look}</td>
-                                    <td><button onClick={deleteArticle.bind(this, articles.id)} className="btn btn-danger btn-sm">Delete</button></td>
-                                </tr>
-                            ))}
-                            </tbody>
-                </table>
+                   
+        { 
+            allarticle.map(articles =>(
+                <div key={articles.id} className="article-head-card col-12 py-3 my-4">
+                    <p style={{textAlign:'right'}}>~{articles.writer}</p>
+                    <div className="row align-items-center">
+                      <div className="article-head-card-main col-12 col-lg-4 " style={{textAlign:'center'}}>
+                          <h1>{articles.title}</h1>
+                          <h4>{articles.contenttype}</h4>
+                      </div>
+                      <div className="article-head-card-details  col-12 col-lg-8" >
+                        <p>{articles.description}</p>
+                        <button className="btn btn-full bg-dark"style={{color:'white'}}>{articles.look}</button> 
+                      </div>         
+                    </div>
+                  </div>                                
+        ))}
+                            
+                
                 
                 
                    
@@ -50,11 +47,11 @@ const Article = ({loadArticle, article, deleteArticle}) => {
 }
 
  Article.propTypes={
-    article: PropTypes.array.isRequired
+    allarticle: PropTypes.array.isRequired
  }
 const mapStateToProps = state =>({
-    article: state.article.article
+    allarticle: state.article.allarticle
    
 });
-export default connect(mapStateToProps, { loadArticle, deleteArticle})(Article);
+export default connect(mapStateToProps, { loadAllArticle})(Article);
 

@@ -28,6 +28,7 @@ class UpdateUserProfileView(APIView):
     def put(self, request,format=None):
         try:
             user = self.request.user
+            username = user.username
 
             data= self.request.data
 
@@ -94,8 +95,10 @@ class UpdateUserProfileView(APIView):
             user= User.objects.get(id=user.id)
 
             UserProfile.objects.filter(user=user).update(first_name=first_name, lastt_name=lastt_name, phone=phone, college=college,status=status,city=city,linkedin=linkedin,email=email,about=about,we1=we1,wed1=wed1,wel11=wel11,wep12=wep12,wep13=wep13,wep14=wep13,wep15=wep15,we2=we2,wed2=wed2,wel21=wel21,wep22=wep22,wep23=wep23,wep24=wep24,wep25=wep25,we3=we3,wed3=wed3,wel31=wel31,wep32=wep32,wep33=wep33,wep34=wep34,wep35=wep35,class10=class10,class10marks=class10marks,class12=class12,class12marks=class12marks,collegemarks=collegemarks,skill1=skill1,skill2=skill2,skill3=skill3,skill4=skill4,skill5=skill5,skill6=skill6,skill7=skill7,skill8=skill8,skill9=skill9,skill10=skill10,hna1=hna1,hna2=hna2,hna3=hna3,hna4=hna4,hna5=hna5,lang1=lang1,lang2=lang2,lang3=lang3,lang4=lang4,lang1p=lang1p,lang2p=lang2p,lang3p=lang3p,lang4p=lang4p)
+            user_profile = UserProfile.objects.get(user=user)
+            user_profile = UserProfileSerializer(user_profile)
 
-            return Response({'success':'updated'})
+            return Response({'profile':user_profile.data, 'username':str(username)})
         except:
             return Response({'error':'something went wrong'})
 
@@ -117,7 +120,7 @@ class GetAllArticleList(APIView):
     def get(self, request, format=None):
         try:
            
-
+           
             user_article = UserArticle.objects.all()
             user_article = UserArticleSerializer(user_article, many=True)
 
@@ -183,6 +186,6 @@ class UserArticleDetails(APIView):
     def delete(self, request, id):
         articles = self.get_object(id)
         articles.delete()
-        
+               
         return Response({'success':'deleted'})
        

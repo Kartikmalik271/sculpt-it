@@ -107,7 +107,7 @@ export const update_profile = (first_name,lastt_name,phone,college,status,city,l
         lang3p,
         lang4p
     });
-    try{
+    try {
         const res = await axios.put(`${process.env.REACT_APP_API_URL}/profile/update`, body, config);
 
         if (res.data.profile && res.data.username){

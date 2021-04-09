@@ -4,7 +4,6 @@ import Headcardmain from './dashboard-contents/headcardmain';
 import { update_profile } from '../../actions/profile';
 import Fade from 'react-reveal/Fade'
 import  Article from './dashboard-contents/article';
-import AddArticle from './dashboard-contents/addArticle'
 
 
 
@@ -49,7 +48,7 @@ const MainDashBoard = () => {
 
 
   return (
-    <div className="App ">
+    <div className="App">
       <div className=" ">
         <div className="row">
           <div className="date">
@@ -62,7 +61,7 @@ const MainDashBoard = () => {
          
           
               <Article/>
-              <AddArticle/>
+              
               
         </div>
       </div>

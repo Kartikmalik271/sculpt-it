@@ -6,13 +6,16 @@ import {
     DELETE_USER_ARTICLE_FAIL,
     ADD_USER_ARTICLE_SUCCESS,
     ADD_USER_ARTICLE_FAIL,
-    ALL_USERS
+    ALL_USERS,
+    LOAD_ALL_ARTICLE_SUCCESS,
+    LOAD_ALL_ARTICLE_FAIL
 } from '../actions/types'
 
 const initialState = {
 
     article:[],
-    loaduser:[]
+    loaduser:[],
+    allarticle:[]
 
 };
 
@@ -25,6 +28,14 @@ export default function(state = initialState, action) {
                     article: action.payload
                 };
             case LOAD_USER_ARTICLE_FAIL:
+                return state
+            
+            case LOAD_ALL_ARTICLE_SUCCESS:
+                return {
+                    ...state,
+                    allarticle: action.payload
+                };
+            case LOAD_ALL_ARTICLE_FAIL:
                 return state
             
             case ALL_USERS:

@@ -2,32 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux'
 import { update_profile } from '../../../actions/profile';
 import Fade from 'react-reveal/Fade'
+import Profileheadcard from './profileheadcard';
+import ProfileMainCard from './profilemaincard';
+import ResumeDownload from './resumeDownload';
 
 
  
-const Resume = ({update_profile, first_name_global,lastt_name_global,phone_global,college_global,status_global ,city_global,linkedin_global,email_global,about_global,we1_global,wed1_global,wel11_global,wep12_global,wep13_global,wep14_global,wep15_global, we2_global, wed2_global,  wel21_global,  wep22_global,  wep23_global,  wep24_global,  wep25_global,  we3_global,  wed3_global,  wel31_global,  wep32_global,  wep33_global,  wep34_global,  wep35_global,  class10_global,  class10marks_global,  class12_global,  class12marks_global,  collegemarks_global,  skill1_global,
-  skill2_global,
-  skill3_global,
-  skill4_global,
-  skill5_global,
-  skill6_global,
-  skill7_global,
-  skill8_global,
-  skill9_global,
-  skill10_global,
-  hna1_global,
-  hna2_global,
-  hna3_global,
-  hna4_global,
-  hna5_global,
-  lang1_global,
-  lang2_global,
-  lang3_global,
-  lang4_global,
-  lang1p_global,
-  lang2p_global,
-  lang3p_global,
-  lang4p_global}) => {
+const Resume = ({update_profile, first_name_global,lastt_name_global,phone_global,college_global,status_global ,city_global,linkedin_global,email_global,about_global,we1_global,wed1_global,wel11_global,wep12_global,wep13_global,wep14_global,wep15_global, we2_global, wed2_global,  wel21_global,  wep22_global,  wep23_global,  wep24_global,  wep25_global,  we3_global,  wed3_global,  wel31_global,  wep32_global,  wep33_global,  wep34_global,  wep35_global,  class10_global,  class10marks_global,  class12_global,  class12marks_global,  collegemarks_global,  skill1_global,skill2_global,skill3_global,  skill4_global, skill5_global,skill6_global,  skill7_global,  skill8_global,skill9_global,  skill10_global,  hna1_global,  hna2_global,  hna3_global,hna4_global,  hna5_global,  lang1_global,lang2_global,  lang3_global,  lang4_global,  lang1p_global,  lang2p_global,  lang3p_global,  lang4p_global}) => {
 
   const [profileUpdated, setProfileUpdated] = useState(false);
 
@@ -108,10 +89,10 @@ useEffect(() =>{
     wed1:   wed1_global,
     wel11:  wel11_global,
     wep12:  wep12_global,
-    wep3:   wep13_global,
-    wep4:   wep14_global,
+    wep13:   wep13_global,
+    wep14:   wep14_global,
     wep15:  wep15_global,
-    wep2:   we2_global,
+    we2:   we2_global,
     wed2:   wed2_global,
     wel21:  wel21_global,
     wep22:  wep22_global,
@@ -169,17 +150,37 @@ const onSubmit = e => {
     updateProfile();        
 };
 
+
+
   return ( 
     <div className="col-12 px-0">
-      <ul>
-        <li>{first_name_global}</li>
-        <li>{lastt_name_global}</li>
-        <li>{phone}</li>
-        <li>{college}</li>
-      </ul>
-      <p>update user profile</p>
-          <form onSubmit={e =>onSubmit(e)}>
-              <Fade bottom><input className="col-12 "  
+        <Profileheadcard name='kartik' status='working'/>
+        <button type="button" className="btn modal-btn-half mt-4 bg-primary" data-toggle="modal" data-target="#EditProfile">Edit Profile</button>
+        <button type="button" className="btn modal-btn-half mt-4 bg-danger" data-toggle="modal" data-target="#Register">View Resume</button>
+
+        <ProfileMainCard abcde='' ab='expert' abc='intermediate' abcd='beginner' />
+        <ResumeDownload abcde='' ab='expert' abc='intermediate' abcd='beginner'/>
+      
+
+      <div className="modalmain" id="ResumeFormModal">
+        
+          <div className="row justify-content-center ">
+            <div class="modal fade homepage-register" id="EditProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLongTitle" style={{color:'white'}}>EDIT YOUR PROFILE HERE</h6>
+                        <button type="button" class="close" style={{color:'white'}} data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div className="row justify-content-center">
+                            <div className="col-10 align-self-center">
+
+                            <form className="resume-profile-form " onSubmit={e =>onSubmit(e)}>
+              <label for="" style={{color:'red'}}>fields marked with ( * ) are required</label><br/><br/>
+              <Fade bottom><label for="">First Name *</label><br/><input className="col-12 "  
                                   type="text" 
                                   name="first_name" 
                                   placeholder={`${first_name_global}`}
@@ -187,7 +188,7 @@ const onSubmit = e => {
                                   value={first_name}  
                                   required="required" 
                                   /></Fade>
-              <Fade bottom><input className="col-12  "  
+              <Fade bottom><label>Last Name *</label><br/><input className="col-12  "  
                                   type="text" 
                                   name="lastt_name" 
                                   placeholder={`${lastt_name_global}`}
@@ -195,7 +196,7 @@ const onSubmit = e => {
                                   value={lastt_name} 
                                   required="required" 
                                   /></Fade>
-              <Fade bottom><input className="col-12 "  
+              <Fade bottom><label>Contact no. *</label><br/><input className="col-12 "  
                                   type="text" 
                                   name="phone" 
                                   placeholder={`${phone_global}`}
@@ -203,7 +204,88 @@ const onSubmit = e => {
                                   value={phone} 
                                   required="required" 
                                   /></Fade>
-              <Fade bottom><input className="col-12"  
+              
+              <Fade bottom><label>Current Working Status *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="status" 
+                                  placeholder={`${status_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={status} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>LinkedIn Id *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="linkedin" 
+                                  placeholder={`${linkedin_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={linkedin} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Email *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="email" 
+                                  placeholder={`${email_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={email} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>About Me *</label><br/><textarea className="col-12"  
+                                  rows="5"
+                                  name="about" 
+                                  placeholder={`${about_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={about} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Secondary School Name *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="class10" 
+                                  placeholder={`${class10_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={class10} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>10th marks (in %) *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="class10marks" 
+                                  placeholder={`${class10marks_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={class10marks} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Passing Year *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep15" 
+                                  placeholder={`${wep15_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep15} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Higher Secondary School *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="class12" 
+                                  placeholder={`${class12_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={class12} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>12th marks (in %) *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="class12marks" 
+                                  placeholder={`${class12marks_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={class12marks} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Passing Year *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep25" 
+                                  placeholder={`${wep25_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep25} 
+                                  required="required" 
+                                  /></Fade>                    
+              <Fade bottom><label>College Name *</label><br/><input className="col-12"  
                                   type="text" 
                                   name="college" 
                                   placeholder={`${college_global}`}
@@ -211,15 +293,374 @@ const onSubmit = e => {
                                   value={college} 
                                   required="required" 
                                   /></Fade>
+              <Fade bottom><label>College marks *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="collegemarks" 
+                                  placeholder={`${collegemarks_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={collegemarks} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Graduating Year *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep35" 
+                                  placeholder={`${wep35_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep35} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Work & Experience (1)</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="we1" 
+                                  placeholder={`${we1_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={we1} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label>Duration</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wed1" 
+                                  placeholder={`${wed1_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wed1} 
+                                  /></Fade>
+              <Fade bottom><label>Institution Name</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wel11" 
+                                  placeholder={`${wel11_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wel11} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label>Points to mention</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep12" 
+                                  placeholder={`${wep12_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep12} 
+                                   
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep13" 
+                                  placeholder={`${wep13_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep13} 
+                                  
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep14" 
+                                  placeholder={`${wep14_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep14} 
+                                   
+                                  /></Fade>
+              
+              <Fade bottom><label>Work & Expericence (2)</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="we2" 
+                                  placeholder={`${we2_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={we2} 
+                                   
+                                  /></Fade>
+              <Fade bottom><label>Duration</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wed2" 
+                                  placeholder={`${wed2_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wed2} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label>Institution Name</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wel21" 
+                                  placeholder={`${wel21_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wel21} 
+                                   
+                                  /></Fade>
+              <Fade bottom><label>Points to Mention</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep22" 
+                                  placeholder={`${wep22_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep22} 
+                                   
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep23" 
+                                  placeholder={`${wep23_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep23} 
+                                   
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep24" 
+                                  placeholder={`${wep24_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep24} 
+                                   
+                                  /></Fade>
+              
+              <Fade bottom>Work & Expericence (3)<input className="col-12"  
+                                  type="text" 
+                                  name="we3" 
+                                  placeholder={`${we3_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={we3} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label>Duration</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wed3" 
+                                  placeholder={`${wed3_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wed3} 
+                                  
+                                  /></Fade>
+              <Fade bottom>Institution Name<input className="col-12"  
+                                  type="text" 
+                                  name="wel31" 
+                                  placeholder={`${wel31_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wel31} 
+                                   
+                                  /></Fade>
+              <Fade bottom><label>Points to Mention</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="wep32" 
+                                  placeholder={`${wep32_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep32} 
+                                   
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep33" 
+                                  placeholder={`${wep33_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep33} 
+                                  
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="wep34" 
+                                  placeholder={`${wep34_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={wep34} 
+                                   
+                                  /></Fade>
+              <Fade bottom><label>Skills *(atleast 3)</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="skill1" 
+                                  placeholder={`${skill1_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill1} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill2" 
+                                  placeholder={`${skill2_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill2} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill3" 
+                                  placeholder={`${skill3_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill3} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill4" 
+                                  placeholder={`${skill4_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill4} 
+                                
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill5" 
+                                  placeholder={`${skill5_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill5} 
+                                 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill6" 
+                                  placeholder={`${skill6_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill6} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label></label><br/>Interest & Hobbies *(atleast 3)<input className="col-12"  
+                                  type="text" 
+                                  name="skill7" 
+                                  placeholder={`${skill7_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill7} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill8" 
+                                  placeholder={`${skill8_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill8} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill9" 
+                                  placeholder={`${skill9_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill9} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="skill10" 
+                                  placeholder={`${skill10_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={skill10} 
+                                  
+                                  /></Fade>
+              <Fade bottom><label>Honours & Awards *(atleast 2)</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="hna1" 
+                                  placeholder={`${hna1_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={hna1} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="hna2" 
+                                  placeholder={`${hna2_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={hna2} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="hna3" 
+                                  placeholder={`${hna3_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={hna3} 
+                                  
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="hna4" 
+                                  placeholder={`${hna4_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={hna4} 
+                                 
+                                  /></Fade>
+              <Fade bottom><input className="col-12"  
+                                  type="text" 
+                                  name="hna5" 
+                                  placeholder={`${hna5_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={hna5} 
+                                 
+                                  /></Fade>
+              <Fade bottom><label>Language *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang1" 
+                                  placeholder={`${lang1_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang1} 
+                                  required="required" 
+                                  /></Fade>
+               <Fade bottom><label>level (beginner/intermediate/expert) only *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang1p" 
+                                  placeholder={`${lang1p_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang1p} 
+                                  required="required" 
+                                  /></Fade>                                 
+              <Fade bottom><label>Language *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang2" 
+                                  placeholder={`${lang2_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang2} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>level (beginner/intermediate/expert) only *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang2p" 
+                                  placeholder={`${lang2p_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang2p} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Language *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang3" 
+                                  placeholder={`${lang3_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang3} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>level (beginner/intermediate/expert) only *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang3p" 
+                                  placeholder={`${lang3p_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang3p} 
+                                  required="required" 
+                                  /></Fade>
+              <Fade bottom><label>Language *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang4" 
+                                  placeholder={`${lang4_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang4} 
+                                  required="required" 
+                                  /></Fade>
+               <Fade bottom><label>level (beginner/intermediate/expert) only *</label><br/><input className="col-12"  
+                                  type="text" 
+                                  name="lang4p" 
+                                  placeholder={`${lang4p_global}`}
+                                  onChange = {e => onChange(e)} 
+                                  value={lang4p} 
+                                  required="required" 
+                                  /></Fade>
+              
               <Fade bottom><button type="submit" className="btn col-6 homepagelogin-btn-half">update</button></Fade>
 
-                                </form>
+                                </form>                            
+                              
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
       
    
     </div>
   );
 }
 const mapStateToProps = state =>({
+  
   first_name_global: state.profile.first_name,
   lastt_name_global: state.profile.lastt_name,
   phone_global: state.profile.phone,

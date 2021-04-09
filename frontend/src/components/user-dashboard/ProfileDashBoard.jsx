@@ -46,7 +46,7 @@ else if (hrs >= 17 && hrs <= 24) greet = 'Good Evening!!!!!';
 
 const Profile = () => {
   return (
-    <div className="App">
+    <div className="App dashboard-profile">
       <div className="col-12 align-self-center">
         <div className="row">
           <div className="date">
@@ -55,7 +55,6 @@ const Profile = () => {
               {currDate} {currMonth} {currYear} ,{day}
             </p>
           </div>
-          <Profileheadcard greet={greet} />
           <Resume/>
         </div>
       </div>
