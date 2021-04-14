@@ -1,7 +1,8 @@
-import React, {Component, useEffect, useState} from "react";
+import React, { useEffect} from "react";
 import { connect } from 'react-redux'
 import  {  loadAllArticle}  from '../../../actions/article'
 import PropTypes from 'prop-types'
+import Fade from 'react-reveal/Fade'
 
 
 
@@ -18,25 +19,24 @@ const Article = ({ allarticle, loadAllArticle}) => {
     
     return ( 
         <div className="col-12">
-                <h1>article</h1>
                 
                    
         { 
             allarticle.map(articles =>(
-                <div key={articles.id} className="article-head-card col-12 py-3 my-4">
+                <Fade bottom><div key={articles.id} className="article-head-card col-12 py-3 my-4">
                     <p style={{textAlign:'right'}}>~{articles.writer}</p>
                     <div className="row align-items-center">
                       <div className="article-head-card-main col-12 col-lg-4 " style={{textAlign:'center'}}>
-                          <h1>{articles.title}</h1>
-                          <h4>{articles.contenttype}</h4>
+                      <Fade bottom><h1>{articles.title}</h1></Fade>
+                      <Fade bottom><h4>{articles.contenttype}</h4></Fade>
                       </div>
                       <div className="article-head-card-details  col-12 col-lg-8" >
-                        <p>{articles.description}</p>
-                        <button className="btn btn-full bg-dark"style={{color:'white'}}>{articles.look}</button> 
+                      <Fade bottom><p>{articles.description}</p></Fade>
+                        <Fade bottom><button onClick = {() => {window.open(articles.look)}} className="btn btn-full bg-dark"style={{color:'white'}}>view source</button> </Fade> 
                       </div>         
                     </div>
-                  </div>                                
-        ))}
+                  </div> </Fade>                                
+        )).reverse()}
                             
                 
                 

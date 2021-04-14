@@ -8,6 +8,7 @@ from django.utils.decorators import method_decorator
 from django.contrib import auth
 from .serializers import UserSerializer
 
+
 class CheckAuthenticatedView(APIView):
     def get(self, request,format=None):
         user=self.request.user
@@ -16,9 +17,9 @@ class CheckAuthenticatedView(APIView):
             isAuthenticated = User.is_authenticated
             
             if isAuthenticated:
-                return Response({'success':'isAuthenticated'},status=status.HTTP_200_OK )
+                return Response({'isAuthenticated':'success'} )
             else:
-                return Response({'error':'isAuthenticated'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'isAuthenticated':'error'}, status=status.HTTP_400_BAD_REQUEST)
         except:
             return Response({'error':'something went wrong'},status=status.HTTP_400_BAD_REQUEST)
 

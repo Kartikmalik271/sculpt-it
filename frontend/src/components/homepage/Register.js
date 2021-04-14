@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Redirect} from 'react-router-dom'
-import Modal from './Modal';
 import ReactPlayer from 'react-player';
 import Slide from 'react-reveal/Slide';
 import { register } from '../../actions/auth'
@@ -108,9 +107,7 @@ const Register = ({register, isAuthenticated, loaduser, allUser}) => {
                                             <button type="submit" className="btn col-6 homepagesignup-btn-half">Register</button>
 
                                 </form></Slide>
-                            <Modal/>
-                            <h1>active users</h1>
-                            {count}
+                            
                         </div>
                         <div className="col-12 col-md-7 mt-3">
                         <ReactPlayer className="col-12" 

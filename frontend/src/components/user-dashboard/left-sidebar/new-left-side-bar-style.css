@@ -1,22 +1,4 @@
-.update-svg {
-  height: 5.5rem;
-  width: 5.5rem;
-}
-/*Change the color or dashboard navigation icon on hover*/
-.dashboard-svg {
-  height: 2rem;
-  width: 2rem;
-  color: #b1b1b1;
-}
-.sidebar-header p {
-  padding-top: 30%;
-  font-weight: bold;
-  font-size: 30px;
-}
-.dashboard-svg:hover {
-  color: #4d45b2;
-  fill: currentColor;
-}
+
 .nav-items-dashboard {
   list-style: none;
   text-decoration: none;
@@ -25,12 +7,10 @@
 .nav-items-dashboard h6 {
   color: #b1b1b1;
 }
-.nav-items-dashboard li:hover .dashboard-svg {
-  color: #4d45b2;
-  fill: currentColor;
-}
+
 .nav-items-dashboard li:hover h6 {
-  color: #4d45b2;
+  color: #cf376a;
+  ;
 }
 a:hover {
   text-decoration: none;
@@ -72,6 +52,8 @@ a:hover {
   margin-bottom: 40px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+
 #new-navbar-left--cstm {
   background-color: #458fb2 !important;
   position: fixed;
@@ -184,17 +166,12 @@ a:hover {
     background-color: rgb(207, 55, 106);
     border-radius: 5px;
   }
-  .dashboard-svg {
-    margin-right: 0;
-  }
+  
   /* .dashboard-svg:hover {
     color: #cf376a;
     fill: currentColor;
   } */
-  .nav-items-dashboard li:hover .dashboard-svg {
-    color: #cf376a;
-    fill: currentColor;
-  }
+ 
   .nav-items-dashboard li:hover h6 {
     color: #cf376a;
   }

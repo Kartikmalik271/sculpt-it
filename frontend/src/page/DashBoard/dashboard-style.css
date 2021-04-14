@@ -24,12 +24,7 @@
 }
 /*main dashboard*/
 
-.head-card-main {
-  margin-top: 10%;
-  background-color: #4c45b2;
-  border-radius: 25px;
-  box-shadow: 2px 2px 3px black;
-}
+
 
 .head-card-main .head {
   padding: 15px 10px 10px;
@@ -38,7 +33,7 @@
 
 .head-card-fav {
   margin-top: 5%;
-  background-color: #3c9e84;
+  background-image: linear-gradient(to left,#148178,#0d7377,#1b6471) ;
   border-radius: 25px;
   box-shadow: 2px 2px 3px black;
   
@@ -52,7 +47,8 @@
 
 .profile-head-card {
   margin-top: 5%;
-  background-color: #070e56;
+  background-image: linear-gradient(to right,#003a81,#00639e,#008bae) ;
+
   color: white;
   border-radius: 25px;
   box-shadow: 2px 2px 3px black;
@@ -111,11 +107,7 @@
   text-align: center;
 
 }
-.resume-profile-form input{
-  margin-bottom: 5px;
-  border-radius: 7px;
-  border: solid 1px grey;
-}
+
 
 .profilecardmain-skills-btn{
   background: #388697;
@@ -164,7 +156,6 @@
   border-radius: 15px;
   box-shadow: 0px 12px 10px  rgb(221, 221, 221);
 
-
 }
 .btn-delete{
   border-radius: 4px;
@@ -174,4 +165,9 @@
 }
 .btn-delete:hover{
   box-shadow: 2px 2px 3px #ab2346;
+}
+.article-add-icon{
+  border-radius: 4px;
+  margin-right: 0px;
+  float: right;
 }

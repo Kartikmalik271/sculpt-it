@@ -1,31 +1,25 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade'
 
 
 const Profileheadcard = (props) => {
-  var google = 'http://google.com'
-  const Google = () => {
-    window.open(google)
-  }
+ 
   return (
-    <div className="profile-head-card col-12 py-4">
+    <Fade top><div className="profile-head-card col-12 py-4">
         <div className="row align-items-center">
-          <div className="profile-head-card-main col-12 col-lg-5 " style={{textAlign:'center'}}>
-            <h1>kartik malik</h1>
-            <h4>student</h4>
+          <div className="profile-head-card-main col-12 col-lg-6 py-4" style={{textAlign:'center'}}>
+          <Fade bottom><h1>{props.name}</h1></Fade>
+          <Fade bottom><h4>{props.status}</h4></Fade>
           </div>
-          <div className="profile-head-card-contacts-1  col-12 col-lg-3" style={{}}>
-            <p>kartikmalik271@gmail.com</p>
-            <p>xxxx-xxx-xxx</p>
-            <p>xxxx-xxx-xxx</p>
-
-          </div>         
-          <div className="profile-head-card-contacts-2  col-12 col-lg-3" style={{}}>
-            
-            <p>xxxxxxxx</p>
-            <p onClick={Google}>xxxxxxxxxxx</p>
+          <div className="profile-head-card-contacts-1  col-12 col-lg-6" style={{textAlign:'right'}}>
+          <Fade bottom><p>{props.email}  <i className="fas fa-envelope "/></p></Fade>
+          <Fade bottom><p>{props.phone} <i className="fas fa-phone "/></p></Fade>
+          <Fade bottom><p>{props.city} <i className="fas fa-map-marker "/></p></Fade>
+          <Fade bottom><p>{props.linkedin} <i className="fa fa-linkedin "/></p></Fade>
+           
           </div>         
         </div>
-    </div>
+    </div></Fade>
   );
 };
 

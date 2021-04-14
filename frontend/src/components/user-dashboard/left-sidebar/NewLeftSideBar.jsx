@@ -1,17 +1,11 @@
 import React, { useEffect } from 'react';
 import './new-left-side-bar-style.css';
 import {Redirect} from 'react-router-dom'
-
-import { Link } from 'react-router-dom';
-
-import DashBoardSVG from './DashboardSVG';
-import FavoriteSVG from './FavoriteSVG';
-import ProfileSVG from './ProfileSVG';
-import SettingSVG from './SettingSVG';
+import { NavLink } from 'react-router-dom';
 import {logout} from '../../../actions/auth'
 import {connect} from 'react-redux'
+import logo from '../../../assets/user-dashboard-img/logo.png'
 
-import UpdateApp from './UpdateApp';
 
 const NewLeftSideBar = ({logout,isAuthenticated}) => {
   const onClick = e => {
@@ -62,88 +56,50 @@ const NewLeftSideBar = ({logout,isAuthenticated}) => {
           className="col-8 col-sm-4 col-md-3 col-lg-2 d-flex flex-column justify-content-around"
           id="sidebar"
         >
-          <div className="sidebar-header ">
-            <p className="text--cstm " style={{textAlign:'center'}}>
-              sculpt it
-            </p>
+          <div className="sidebar-header px-0">
+            <img style={{height:'50',width:'50'}} src={logo} alt=""/>
           </div>
 
           <ul className="nav-items-dashboard align-self-center d-flex flex-column justify-content-start">
-            <Link to="/dashboard" className="collapse-sidebar-on-click">
+            <NavLink to="/dashboard" className="collapse-sidebar-on-click">
               <li className="d-flex align-items-center mb-4 justify-content-start">
-                <span>
-                  <DashBoardSVG
-                    fill="#b1b1b1"
-                    className="dashboard-svg mr-2 mr-md-3"
-                  />
-                </span>
+                
                 <h6 className="text--cstm-m-0  db-nav-color--secondary ">
-                  Dashboard
+                  <i className="fas fa-th fa-2x"/>  Dashboard
                 </h6>
               </li>
-            </Link>
-            <Link
+            </NavLink>
+
+            <NavLink
               to="/dashboard/favorite"
-              className="collapse-sidebar-on-click"
-            >
+              className="collapse-sidebar-on-click" >
               <li className="d-flex align-items-center mb-4 justify-content-start">
-                <span>
-                  <FavoriteSVG
-                    fill="#b1b1b1"
-                    className="dashboard-svg mr-2 mr-md-3"
-                  />
-                </span>
+                
 
                 <h6 className="text--cstm-m-0 db-nav-color--secondary ">
-                  Favorite
+                <i className="fa fa-pencil fa-2x"/> Add Post
                 </h6>
               </li>
-            </Link>
-            <Link to="/dashboard/profile" className="collapse-sidebar-on-click">
+            </NavLink>
+            <NavLink to="/dashboard/profile" className="collapse-sidebar-on-click" >
               <li className="d-flex align-items-center mb-4  justify-content-start">
-                <span>
-                  <ProfileSVG
-                    fill="#b1b1b1"
-                    className="dashboard-svg mr-2 mr-md-3"
-                  />
-                </span>
+                
                 <h6 className="text--cstm-m-0 db-nav-color--secondary ">
-                  Profile
+                <i className="fas fa-user fa-2x"/>  Profile
                 </h6>
               </li>
-            </Link>
-            <Link
-              to="/dashboard/settings"
-              className="collapse-sidebar-on-click"
-            >
-              <li className="d-flex align-items-center mb-4  justify-content-start">
-                <span>
-                  <SettingSVG
-                    fill="#b1b1b1"
-                    className="dashboard-svg mr-2 mr-md-3"
-                  />
-                </span>
-                <h6 className="text--cstm-m-0 db-nav-color--secondary ">
-                  Settings
-                </h6>
-              </li>
-            </Link>
-            <Link
+            </NavLink>
+            
+            <NavLink
               to="#"
-              className="collapse-sidebar-on-click"
-            >
+              className="collapse-sidebar-on-click" >
               <li className="d-flex align-items-center mb-4  justify-content-start">
-                <span>
-                  <SettingSVG
-                    fill="#b1b1b1"
-                    className="dashboard-svg mr-2 mr-md-3"
-                  />
-                </span>
+                
                 <a onClick={e =>onClick(e)}><h6 className="text--cstm-m-0 db-nav-color--secondary ">
-                  Logout
+                <i className="fa fa-sign-out fa-2x"/>  Logout
                 </h6></a>
               </li>
-            </Link>
+            </NavLink>
           </ul>
          
         </nav>
@@ -152,7 +108,7 @@ const NewLeftSideBar = ({logout,isAuthenticated}) => {
             id="new-navbar-left--cstm"
             className="main-dash-navbar  navbar-expand-lg navbar-light bg-light rounded-circle"
           >
-            <div className="container-fluid">
+            <div className="container-fluid alignself-center">
               <button type="button" id="sidebarCollapse" className="navbar-btn">
                 <span />
                 <span />

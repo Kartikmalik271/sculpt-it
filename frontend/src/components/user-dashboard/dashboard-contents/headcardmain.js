@@ -1,25 +1,29 @@
 import React from 'react';
-import Headlogo from '../../../assets/user-dashboard-img/Head-img.png';
+import { connect } from 'react-redux'
+import Fade from 'react-reveal/Fade'
 
-const Headcardmain = () => {
+const Headcardmain = ({name}) => {
   return (
-    <div className="head-card-main">
-      <div className="col-12 px=0">
+    <Fade top><div className="head-card-fav">
+      <div className="col-12">
         <div className="row align-items-center">
-          <div className="head col-12 ">
-            <h3>WELCOME BACK ANA!!!</h3>
-            <p class="d-none d-sm-block">
+          <div className="head col-12 px-4">
+          <Fade bottom><h3>WELCOME {name}!!!</h3></Fade>
+          <Fade bottom><p >
               Une école est le lieu où nous obtenons des connaissances. C'est
               comme un lieu saint pour les élèves.Et les professeurs sont nos
               dieux. Mon école est très belle. Le nom de mon école est ABC.
               C'est dans la ville XYZ. C'est avoir 150 chambres.
-            </p>
+            </p></Fade>
           </div>
          
         </div>
       </div>
-    </div>
+    </div></Fade>
   );
 };
+const mapStateToProps = state =>({
+  name: state.profile.first_name
+});
 
-export default Headcardmain;
+export default connect(mapStateToProps)(Headcardmain);

@@ -1,8 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { connect } from 'react-redux'
+import React from 'react';
 import Headcardmain from './dashboard-contents/headcardmain';
-import { update_profile } from '../../actions/profile';
-import Fade from 'react-reveal/Fade'
 import  Article from './dashboard-contents/article';
 
 
@@ -49,7 +46,7 @@ const MainDashBoard = () => {
 
   return (
     <div className="App">
-      <div className=" ">
+      <div className="col-12 ">
         <div className="row">
           <div className="date">
             <h7 className="content-tag d-none d-sm-block">DASHBOARD</h7>

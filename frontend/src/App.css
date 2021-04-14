@@ -6,3 +6,12 @@
     outline: none;
     color:transparent;
 }
+.main-loading{
+    height: 100vh;
+    
+    background-image: linear-gradient(to right top,#08415c,#00687f,#00918f) ;
+
+}
+.main-spinner{
+    margin-top: 22%;
+}

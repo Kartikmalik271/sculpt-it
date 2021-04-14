@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect,Fragment } from 'react';
 
 import { BrowserRouter as Router, Route, Switch ,Redirect} from 'react-router-dom';
 import Homepage from './page/homepage/homepage';
@@ -11,7 +11,7 @@ import AlertTemplate from 'react-alert-template-basic'
 import {provider, Provider} from 'react-redux'
 import store from './store'
 import Layout from './hocs/layout'
-
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 function App() {
   const scrollTop = () =>{
@@ -26,9 +26,18 @@ const options = {
   // you can also just use 'scale'
   transition: transitions.SCALE
 }
-  
+ const [loading, setLoading] = useState(false)
+
+  useEffect(() =>{
+    setLoading(true)
+    setTimeout(() =>{
+      setLoading(false)
+    },8000)
+  },[])
+
   return (
     <div className="App">
+      { !loading ? (
       <Provider store={store}>
         <AlertProvider template={AlertTemplate} {...options}>
           
@@ -42,9 +51,10 @@ const options = {
           </Router>
         </AlertProvider>
       </Provider>
-      <h1 className="scroll-top bg-transparent" onClick={scrollTop}><i className="fa fa-chevron-circle-up fa-xl"/></h1>
-
+      ):(<div className="main-loading col-12"><div className="row justify-content-center align-items-center"><div className="main-spinner"><ClimbingBoxLoader color={'white'} loading={loading}  size={20} /></div></div></div> )}
+    <h1 className="scroll-top bg-transparent" onClick={scrollTop}><i className="fa fa-chevron-circle-up fa-xl"/></h1>
     </div>
+    
   );
 }
 

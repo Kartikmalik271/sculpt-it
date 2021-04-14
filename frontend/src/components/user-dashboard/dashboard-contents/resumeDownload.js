@@ -7,62 +7,109 @@ import '../../../page/DashBoard/dashboard-style.css'
 
 const ResumeDownload = (props) => {
 
-    var level1 = props.ab.toUpperCase()
-    var level2 = props.abc.toUpperCase()
-    var level3 = props.abcd.toUpperCase()
-    var level4 = props.abcde.toUpperCase()
-    var lvl1 ,lvl2 , lvl3, lvl4
-    if (level1 === 'BEGINNER')
-        lvl1=1;
-    else if(level1 === 'INTERMEDIATE')
-        lvl1=3;
-    else if(level1 === 'EXPERT')
-        lvl1=5;
-    else
-        lvl1=0;
+   
+    var sk1 = props.skill1
+    var sk2 = props.skill2
+    var sk3 = props.skill3
+    var sk4 = props.skill4
+    var sk5 = props.skill5
+    var sk6 = props.skill6
+    var sk7 = props.skl7
+    var ih1 = props.ih1
+    var ih2 = props.ih2
+    var ih3 = props.ih3
+    var ih4 = props.ih4
+    var ih5 = props.ih5
+    
+    var level1 = parseInt(props.lang1p)
+    var level2 = parseInt(props.lang2p)
+    var level3 = parseInt(props.lang3p)
+    var level4 = parseInt(props.lang4p)
+    var level5 = parseInt(props.lang5p)
+    var level6 = parseInt(props.lang6p)
 
-    if (level2 === 'BEGINNER')
-        lvl2=1;
-    else if(level2 === 'INTERMEDIATE')
-        lvl2=3
-    else if(level2 === 'EXPERT')
-        lvl2=5
-    else
-        lvl2=0
+    var lvl1 ,lvl2 , lvl3, lvl4,lvl5,lvl6
+    if (level1 === 1 )
+    lvl1=1;
+else if (level1 === 2 )
+    lvl1=2;
+else if (level1 === 3 )
+    lvl1=3;
+else if (level1 === 4 )
+    lvl1=4;
+else if (level1 === 5 )
+    lvl1=5;
+else
+    lvl1=0;
 
-        if (level3 === 'BEGINNER')
-        lvl3=1;
-    else if(level3 === 'INTERMEDIATE')
-        lvl3=3
-    else if(level3 === 'EXPERT')
-        lvl3=5
-    else
-        lvl3=0
+if (level2 === 1 )
+    lvl2=1;
+else if (level2 === 2 )
+    lvl2=2;
+else if (level2 === 3 )
+    lvl2=3;
+else if (level2 === 4 )
+    lvl2=4;
+else if (level2 === 5 )
+    lvl2=5;
+else
+    lvl2=0;
 
-        if (level3 === 'BEGINNER')
-        lvl4=1;
-    else if(level4 === 'INTERMEDIATE')
-        lvl4=3
-    else if(level4 === 'EXPERT')
-        lvl4=5
-    else
-        lvl4=0
+if (level3 === 1 )
+    lvl3=1;
+else if (level3 === 2 )
+    lvl3=2;
+else if (level3 === 3 )
+    lvl3=3;
+else if (level3 === 4 )
+    lvl3=4;
+else if (level3 === 5 )
+    lvl3=5;
+else
+    lvl3=0;
 
+if (level4 === 1 )
+    lvl4=1;
+else if (level4 === 2 )
+    lvl4=2;
+else if (level4 === 3 )
+    lvl4=3;
+else if (level4 === 4 )
+    lvl4=4;
+else if (level4 === 5 )
+    lvl4=5;
+else
+    lvl4=0;
 
-    var sk1 = 'web developement'
-    var sk2 = 'communication'
-    var sk3 = 'creativity'
-    var sk4 = 'programming'
-    var sk5 = 'skill'
-    var sk6 = 'demo'
-    var ih1 = 'solo travelling'
-    var ih2 = 'basketball'
-    var ih3 = 'learning new things'
-    var ih4 = 'interest'
+if (level5 === 1 )
+    lvl5=1;
+else if (level5 === 2 )
+    lvl5=2;
+else if (level5 === 3 )
+    lvl5=3;
+else if (level5 === 4 )
+    lvl5=4;
+else if (level5 === 5 )
+    lvl5=5;
+else
+    lvl5=0;
+
+if (level6 === 1 )
+    lvl6=1;
+else if (level6 === 2 )
+    lvl6=2;
+else if (level6 === 3 )
+    lvl6=3;
+else if (level6 === 4 )
+    lvl6=4;
+else if (level6 === 5 )
+    lvl6=5;
+else
+    lvl6=0;
+
 
     var skills = []
     var interest = []
-    
     if (sk1 !== "")
         skills.push(sk1)
     if (sk2 !== "")
@@ -75,6 +122,8 @@ const ResumeDownload = (props) => {
         skills.push(sk5)
     if (sk6 !== "")
         skills.push(sk6)
+    if (sk7 !== "")
+        skills.push(sk7)
     if (ih1 !== "")
       interest.push(ih1)
     if (ih2 !== "")
@@ -83,6 +132,8 @@ const ResumeDownload = (props) => {
       interest.push(ih3)
     if (ih4 !== "")
       interest.push(ih4)
+    if (ih5 !== "")
+      interest.push(ih5)
 
     const componentRef = useRef();
     
@@ -96,7 +147,7 @@ const ResumeDownload = (props) => {
               <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content">
                   <div class="modal-header">
-                      <h6 class="modal-title" id="exampleModalLongTitle">SIGN-UP HERE</h6>
+                      <h6 class="modal-title" id="exampleModalLongTitle">Resume</h6>
                       <button type="button" class="close" style={{color:'white'}} data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                       </button>
@@ -108,39 +159,38 @@ const ResumeDownload = (props) => {
                     <div className="row align-items-center">
                         
                         <div className="resume-box-name col-6 pl-5">
-                            <h2>Name 123</h2>
-                            <h5>position </h5>
+                            <h2>{props.name}</h2>
+                            <h5>{props.status} </h5>
                         </div>
-                        <div className="resume-box-social py-4 col-6" >
-                            <h6>xxxxxx@xxxx.com  <i className="fas fa-envelope "/></h6>
-                            <h6>xxxx-xxx-xxx  <i className="fas fa-phone "/></h6>
-                            <h6>xxxxx  <i className="fas fa-map-marker "/></h6>
-                            <h6>xxxxxxxxx  <i className="fa fa-linkedin "/></h6>
-                            <h6>xxxx-xx  <i className="fa fa-instagram "/></h6>
+                        <div className="resume-box-social py-3 col-6" >
+                            <h6>{props.email}  <i className="fas fa-envelope "/></h6>
+                            <h6>{props.phone}  <i className="fas fa-phone "/></h6>
+                            <h6>{props.city}  <i className="fas fa-map-marker "/></h6>
+                            <h6>{props.linkedin}  <i className="fa fa-linkedin "/></h6>
                         </div>
                     </div>
                 </div>
                 
                 <div className="col-12 mt-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>{props.about}</p>
                 </div>
                 <div className="col-3">
                     <div className="row align-items-center">
                         <div className="col-12 resumebox-skills">
-                            <h3><i className="fas fa-cogs "/>  skills </h3><br/>
+                            <h3><i className="fas fa-cogs "/>  skills </h3>
                             <div className="row justify-content-center">
                                 { skills.map(skill =>(<h6 className="profilecardmain-skills-btn px-4 py-2">{skill}</h6>))}
                             </div>
                         </div>
-                        <div className="col-12 resumebox-skills mt-4">
-                    <h3><i className="fas fa-swimmer "/>  Interest & Hobbies</h3><br/>
+                        <div className="col-12 resumebox-skills mt-3">
+                    <h3><i className="fas fa-swimmer "/>  Interest & Hobbies</h3>
                     <div className="row justify-content-center">
                         { interest.map(skill =>(<h6 className="profilecardmain-interest-btn px-4 py-2">{skill}</h6>))}
                     </div>
                 </div>  
-                <div className="col-12 resumebox-skills mt-4">
-                    <h3><i className="fas fa-language "/>  Langunage & Technicals</h3><br/>
-                    <h5>English</h5><ReactStars
+                <div className="col-12 resumebox-skills mt-3">
+                    <h3><i className="fas fa-language "/>  Langunage & Technicals</h3>
+                    <h5>{props.lang1}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
@@ -152,7 +202,19 @@ const ResumeDownload = (props) => {
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
                             />
-                            <h5>German</h5><ReactStars
+                            <h5>{props.lang2}</h5><ReactStars
+                                count={5}
+                            
+                                size={24}
+                                value={lvl2}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fas fa-star"></i>}
+                                activeColor="#000000"
+                            />
+                            <h5>{props.lang3}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
@@ -164,11 +226,11 @@ const ResumeDownload = (props) => {
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
                             />
-                            <h5>python</h5><ReactStars
+                            <h5>{props.lang4}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
-                                value={lvl1}
+                                value={lvl4}
                                 isHalf={true}
                                 edit={false}
                                 emptyIcon={<i className="far fa-star"></i>}
@@ -176,11 +238,11 @@ const ResumeDownload = (props) => {
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
                             />
-                            <h5>C++</h5><ReactStars
+                            <h5>{props.lang5}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
-                                value={lvl2}
+                                value={lvl5}
                                 isHalf={true}
                                 edit={false}
                                 emptyIcon={<i className="far fa-star"></i>}
@@ -188,11 +250,11 @@ const ResumeDownload = (props) => {
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
                             />
-                            <h5>Excel</h5><ReactStars
+                            <h5>{props.lang6}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
-                                value={lvl2}
+                                value={lvl6}
                                 isHalf={true}
                                 edit={false}
                                 emptyIcon={<i className="far fa-star"></i>}
@@ -200,18 +262,7 @@ const ResumeDownload = (props) => {
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
                             />
-                            <h5>docer</h5><ReactStars
-                                count={5}
-                            
-                                size={24}
-                                value={lvl2}
-                                isHalf={true}
-                                edit={false}
-                                emptyIcon={<i className="far fa-star"></i>}
-                                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                fullIcon={<i className="fas fa-star"></i>}
-                                activeColor="#000000"
-                            />
+
 
                     
                 </div>      
@@ -221,53 +272,54 @@ const ResumeDownload = (props) => {
                     <div className="row align-items-center">
                         <div className="col-12 resumebox-skills ">
                             <h3 ><i className="fas fa-briefcase "/>  Work & Experience</h3><br/>
-                            <h5 style={{fontWeight:'bold'}}>demo1</h5>
-                            <h5>inst. name</h5>
-                            <h6>date</h6>
+                            <h5 style={{fontWeight:'bold'}}>{props.we1}</h5>
+                            <h5>{props.wel11}</h5>
+                            <h6>{props.wed1}</h6>
                             <div className="col-12 resumebox-we pl-5">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <br/>
+                            <p>{props.wep12}</p>
+                            <p>{props.wep13}</p>
+                            <p>{props.wep14}</p>
+
                             </div>
 
                         
-                            <h5 style={{fontWeight:'bold'}}>demo1</h5>
-                            <h5>inst. name</h5>
-                            <h6>date</h6>
+                            <h5 style={{fontWeight:'bold'}}>{props.we2}</h5>
+                            <h5>{props.wel21}</h5>
+                            <h6>{props.wed2}</h6>
                             <div className="col-12 resumebox-we pl-5">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <br/>
+                            <p>{props.wep22}</p>
+                            <p>{props.wep23}</p>
+                            <p>{props.wep24}</p>
                             </div>
                         </div>
                         <div className="col-12 resumebox-skills mt-4">
                                 <h3><i className="fas fa-book-open "/>  Education</h3><br/>
-                                <h5 className=" col-12 resumebox-edu-head py-2"style={{fontWeight:'bold'}}>xyzSchool (10th)</h5>
+                                <h5 className=" col-12 resumebox-edu-head py-2"style={{fontWeight:'bold'}}>{props.class10} (10th)</h5>
                                 <div className="resumebox-edu pl-3 mb-2 ml-3">
                                    
-                                    <h5>Marks</h5>
-                                    <h6>~xxxx</h6>
+                                    <h5>{props.class10marks}</h5>
+                                    <h6>~{props.pass10}</h6>
                                 </div>
-                                <h5 className=" col-12 resumebox-edu-head py-2"style={{fontWeight:'bold'}}>xyz School(12th)</h5>
+                                <h5 className=" col-12 resumebox-edu-head py-2"style={{fontWeight:'bold'}}>{props.class12} (12th)</h5>
                                 <div className="resumebox-edu pl-3 mb-3 ml-3">
                                     
-                                    <h5>Marks</h5>
-                                    <h6>~xxxx</h6>
+                                    <h5>{props.class12marks}</h5>
+                                    <h6>~{props.pass12}</h6>
                                 </div>
-                                <h5 className=" col-12 resumebox-edu-head py-2">xyz College</h5>
+                                <h5 className=" col-12 resumebox-edu-head py-2">{props.college}</h5>
                                 <div className="resumebox-edu pl-3 mb-3 ml-3">
                                   
-                                    <h5>Marks</h5>
-                                    <h6>~xxxx</h6>
+                                    <h5>{props.collegemarks}</h5>
+                                    <h6>~{props.passclg}</h6>
                                 </div>
                         </div>
                         <div className="col-12 resumebox-skills mt-4">
                                     <h3 ><i className="fas fa-award "/>  Awards & Honours</h3><br/>
-                                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </p> <br/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p> <br/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur </p>
+                                    <p>{props.hna1}</p>
+                                    <br/><p>{props.hna2}</p>
+                                    <br/><p>{props.hna3}</p>
+                                    <br/><p>{props.hna4}</p>
+                                    <br/><p>{props.hna5}</p>
                         </div>
                     </div>
                 </div>
@@ -281,7 +333,7 @@ const ResumeDownload = (props) => {
             </div>
         </div>
         <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
+        trigger={() => <button className="btn btn-printout bg-success">Print this out!</button>}
         content={() => componentRef.current}
       />
                           </div>

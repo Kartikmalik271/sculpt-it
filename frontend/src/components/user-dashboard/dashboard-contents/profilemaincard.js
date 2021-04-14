@@ -1,59 +1,110 @@
 import React from 'react';
 import ReactStars from "react-rating-stars-component";
+import Fade from 'react-reveal/Fade'
 
 const ProfileMainCard = (props) => {
-    var sk1 = 'web developement'
-    var sk2 = 'communication'
-    var sk3 = 'creativity'
-    var sk4 = 'programming & logic building'
-    var sk5 = 'skill'
-    var sk6 = ''
-    var ih1 = 'solo travelling'
-    var ih2 = 'basketball'
-    var ih3 = 'learning new things'
-    var ih4 = 'interest'
-    var level1 = props.ab.toUpperCase()
-    var level2 = props.abc.toUpperCase()
-    var level3 = props.abcd.toUpperCase()
-    var level4 = props.abcde.toUpperCase()
-    var lvl1 ,lvl2 , lvl3, lvl4
-    if (level1 === 'BEGINNER')
-        lvl1=1;
-    else if(level1 === 'INTERMEDIATE')
-        lvl1=3;
-    else if(level1 === 'EXPERT')
-        lvl1=5;
-    else
-        lvl1=0;
+    var sk1 = props.skill1
+    var sk2 = props.skill2
+    var sk3 = props.skill3
+    var sk4 = props.skill4
+    var sk5 = props.skill5
+    var sk6 = props.skill6
+    var sk7 = props.skl7
+    var ih1 = props.ih1
+    var ih2 = props.ih2
+    var ih3 = props.ih3
+    var ih4 = props.ih4
+    var ih5 = props.ih5
+    
+    
+    var level1 = parseInt(props.lang1p)
+    var level2 = parseInt(props.lang2p)
+    var level3 = parseInt(props.lang3p)
+    var level4 = parseInt(props.lang4p)
+    var level5 = parseInt(props.lang5p)
+    var level6 = parseInt(props.lang6p)
 
-    if (level2 === 'BEGINNER')
-        lvl2=1;
-    else if(level2 === 'INTERMEDIATE')
-        lvl2=3
-    else if(level2 === 'EXPERT')
-        lvl2=5
-    else
-        lvl2=0
+    var lvl1 ,lvl2 , lvl3, lvl4,lvl5,lvl6
+    if (level1 === 1 )
+    lvl1=1;
+else if (level1 === 2 )
+    lvl1=2;
+else if (level1 === 3 )
+    lvl1=3;
+else if (level1 === 4 )
+    lvl1=4;
+else if (level1 === 5 )
+    lvl1=5;
+else
+    lvl1=0;
 
-        if (level3 === 'BEGINNER')
-        lvl3=1;
-    else if(level3 === 'INTERMEDIATE')
-        lvl3=3
-    else if(level3 === 'EXPERT')
-        lvl3=5
-    else
-        lvl3=0
+if (level2 === 1 )
+    lvl2=1;
+else if (level2 === 2 )
+    lvl2=2;
+else if (level2 === 3 )
+    lvl2=3;
+else if (level2 === 4 )
+    lvl2=4;
+else if (level2 === 5 )
+    lvl2=5;
+else
+    lvl2=0;
 
-        if (level3 === 'BEGINNER')
-        lvl4=1;
-    else if(level4 === 'INTERMEDIATE')
-        lvl4=3
-    else if(level4 === 'EXPERT')
-        lvl4=5
-    else
-        lvl4=0
+if (level3 === 1 )
+    lvl3=1;
+else if (level3 === 2 )
+    lvl3=2;
+else if (level3 === 3 )
+    lvl3=3;
+else if (level3 === 4 )
+    lvl3=4;
+else if (level3 === 5 )
+    lvl3=5;
+else
+    lvl3=0;
+
+if (level4 === 1 )
+    lvl4=1;
+else if (level4 === 2 )
+    lvl4=2;
+else if (level4 === 3 )
+    lvl4=3;
+else if (level4 === 4 )
+    lvl4=4;
+else if (level4 === 5 )
+    lvl4=5;
+else
+    lvl4=0;
+
+if (level5 === 1 )
+    lvl5=1;
+else if (level5 === 2 )
+    lvl5=2;
+else if (level5 === 3 )
+    lvl5=3;
+else if (level5 === 4 )
+    lvl5=4;
+else if (level5 === 5 )
+    lvl5=5;
+else
+    lvl5=0;
+
+if (level6 === 1 )
+    lvl6=1;
+else if (level6 === 2 )
+    lvl6=2;
+else if (level6 === 3 )
+    lvl6=3;
+else if (level6 === 4 )
+    lvl6=4;
+else if (level6 === 5 )
+    lvl6=5;
+else
+    lvl6=0;
 
 
+    
 
     var skills = []
     var interest = []
@@ -69,6 +120,8 @@ const ProfileMainCard = (props) => {
         skills.push(sk5)
     if (sk6 !== "")
         skills.push(sk6)
+    if (sk7 !== "")
+        skills.push(sk7)
     if (ih1 !== "")
       interest.push(ih1)
     if (ih2 !== "")
@@ -77,41 +130,40 @@ const ProfileMainCard = (props) => {
       interest.push(ih3)
     if (ih4 !== "")
       interest.push(ih4)
+    if (ih5 !== "")
+      interest.push(ih5)
         
     return ( 
-        <div className="profilemaincard col-12 ">
+        <Fade bottom><div className="profilemaincard col-12 ">
             <div className="row">
                 <div className="profilemaincard-lhs col-12  col-lg-6 px-lg-4">
                     <div className="row">
-                        <div className="profilemaincard-lhs-about greybox col-12 mt-5 py-2 px-3">
-                            <h2>About Me</h2><br/>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                        <div className="profilemaincard-lhs-about col-12 mt-3 py-2 px-3">
-                            <h2> Skills</h2><br/>
+                    <Fade bottom><div className="profilemaincard-lhs-about greybox col-12 mt-5 py-2 px-3">
+                        <Fade bottom><h2>About Me</h2><br/></Fade>
+                        <Fade bottom><p>{props.about}</p></Fade>
+                        </div> </Fade>
+                        <Fade bottom><div className="profilemaincard-lhs-about col-12 mt-3 py-2 px-3">
+                        <Fade bottom><h2> Skills</h2><br/></Fade>
                             <div className="row justify-content-center">
-                                { skills.map(skill =>(<h6 className="profilecardmain-skills-btn px-4 py-2">{skill}</h6>))}
+                                { skills.map(skill =>(<Fade bottom><h6 className="profilecardmain-skills-btn px-4 py-2">{skill}</h6></Fade>))}
                                
                             </div>
-                        </div>
-                        <div className="profilemaincard-lhs-about profilemaincard-lhs-hna col-12 mt-3 py-2 px-3">
-                            <h2>Awards & Honours</h2><br/>
+                        </div> </Fade>
+                        <Fade bottom><div className="profilemaincard-lhs-about profilemaincard-lhs-hna col-12 mt-3 py-2 px-3">
+                        <Fade bottom><h2>Awards & Honours</h2><br/></Fade>
                             
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <br/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <br/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                        <Fade bottom><p>{props.hna1}</p></Fade>
+                        <Fade bottom><br/><p>{props.hna2}</p> </Fade>
+                        <Fade bottom><br/><p>{props.hna3}</p> </Fade>
+                        <Fade bottom><br/><p>{props.hna4}</p> </Fade>
+                        <Fade bottom><br/><p>{props.hna5}</p> </Fade>
                             
-                        </div>
-                        <div className="profilemaincard-lhs-about col-12 mt-3 py-2 px-3">
-                            <h2>Interest & Hobbies </h2><br/>
-                            <div className="row justify-content-center">
-                                { interest.map(hobbies =>(<h6 className="profilecardmain-interest-btn px-4 py-2">{hobbies}</h6>))}
-                               
-                            </div>
-                        </div>
-                        <div className="profilemaincard-lhs-about profilemaincard-lhs-hna col-12 mt-3 py-2 px-3">
-                            <h2>LANGUAGES</h2><br/>
-                            <h5>English</h5><ReactStars
+                        </div> </Fade>
+                        
+                        <Fade bottom><div className="profilemaincard-lhs-about profilemaincard-lhs-hna col-12 mt-3 py-2 px-3">
+                        <Fade bottom><h2>LANGUAGES & TECHS</h2></Fade>
+                        <Fade bottom><p style={{color:'grey'}}>(*refresh the main dashboard to see updated ratings)</p><br/></Fade>
+                        <Fade bottom><h5>{props.lang1}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
@@ -122,32 +174,8 @@ const ProfileMainCard = (props) => {
                                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
-                            />
-                            <h5>German</h5><ReactStars
-                                count={5}
-                            
-                                size={24}
-                                value={lvl3}
-                                isHalf={true}
-                                edit={false}
-                                emptyIcon={<i className="far fa-star"></i>}
-                                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                fullIcon={<i className="fas fa-star"></i>}
-                                activeColor="#000000"
-                            />
-                            <h5>python</h5><ReactStars
-                                count={5}
-                            
-                                size={24}
-                                value={lvl1}
-                                isHalf={true}
-                                edit={false}
-                                emptyIcon={<i className="far fa-star"></i>}
-                                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                fullIcon={<i className="fas fa-star"></i>}
-                                activeColor="#000000"
-                            />
-                            <h5>C++</h5><ReactStars
+                            /></Fade>
+                            <Fade bottom><h5>{props.lang2}</h5><ReactStars
                                 count={5}
                             
                                 size={24}
@@ -158,65 +186,115 @@ const ProfileMainCard = (props) => {
                                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                                 fullIcon={<i className="fas fa-star"></i>}
                                 activeColor="#000000"
-                            />
+                            /></Fade>
+                            <Fade bottom><h5>{props.lang3}</h5><ReactStars
+                                count={5}
+                            
+                                size={24}
+                                value={lvl3}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fas fa-star"></i>}
+                                activeColor="#000000"
+                            /></Fade>
+                            <Fade bottom><h5>{props.lang4}</h5><ReactStars
+                                count={5}
+                            
+                                size={24}
+                                value={lvl4}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fas fa-star"></i>}
+                                activeColor="#000000"
+                            /></Fade>
+                            <Fade bottom><h5>{props.lang5}</h5><ReactStars
+                                count={5}
+                            
+                                size={24}
+                                value={lvl5}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fas fa-star"></i>}
+                                activeColor="#000000"
+                            /></Fade>
+                            <Fade bottom><h5>{props.lang6}</h5><ReactStars
+                                count={5}
+                            
+                                size={24}
+                                value={lvl6}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fas fa-star"></i>}
+                                activeColor="#000000"
+                            /></Fade>
 
-                        </div>
+                        </div></Fade>
                     </div>
                 </div>
                 <div className="col-12 col-lg-6 profilemaincard-rhs px-lg-4">
                     <div className="row">
-                        <div className="col-12 profilemaincard-rhs-education mt-5 py-2 px-3 pb-3">
-                            <h2>Education</h2>
+                        <Fade bottom><div className="col-12 profilemaincard-rhs-education mt-5 py-2 px-3 pb-3">
+                        <Fade bottom><h2>Education</h2></Fade>
                             <div className="row justify-content-center">
-                                <div className="col-5 secondary-school mt-3 mx-3" >
+                            <Fade bottom><div className=" col-8 col-lg-5 secondary-school mt-3 mx-3" >
                                     <i className="fas fa-school fa-3x pt-2"/>
-                                    <h4>xxx school</h4>
-                                    <h5>marks</h5>
-                                    <p>~ xxxx</p>
-                                </div>
-                                <div className="col-5 high-school mt-3 mx-3">
+                                    <h4>{props.class10}</h4>
+                                    <h5>{props.class10marks}</h5>
+                                    <p>~ {props.pass10}</p>
+                                </div></Fade>
+                                <Fade bottom><div className="col-8 col-lg-5 high-school mt-3 mx-3">
                                 <i className="fas fa-school fa-3x pt-2 "/>
-                                    <h4>xxx school</h4>
-                                    <h5>marks</h5>
-                                    <p>~ xxxx</p>
-                                </div>
-                                <div className="col-5 college-school mx-3 mt-4">
+                                    <h4>{props.class12}</h4>
+                                    <h5>{props.class12marks}</h5>
+                                    <p>~ {props.pass12}</p>
+                                </div></Fade>
+                                <Fade bottom><div className="col-8 col-lg-5 college-school mx-3 mt-4">
                                 <i className="fas fa-graduation-cap fa-3x pt-2 "/>
-                                    <h4>xxx college</h4>
-                                    <h5>marks</h5>
-                                    <p>~ xxxx</p>
-                                </div>
+                                    <h4> {props.college}</h4>
+                                    <h5>{props.collegemarks}</h5>
+                                    <p>~ {props.passclg}</p>
+                                </div></Fade>
 
                             </div>
-                        </div>
-                        <div className="profilemaincard-rhs-education profilemaincard-rhs-we col-12 mt-3 py-2 px-3">
-                            <h2>Work & Experience</h2><br/>
-                            <h4>demo1</h4>
-                            <h5>inst. name</h5>
-                            <h6>date</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                        </div></Fade>
+                        <Fade bottom><div className="profilemaincard-rhs-education profilemaincard-rhs-we col-12 mt-3 py-2 px-3">
+                        <Fade bottom><h2>Work & Experience</h2><br/></Fade>
+                        <Fade bottom><h4>{props.we1}</h4></Fade>
+                        <Fade bottom><h5>{props.wel11}</h5></Fade>
+                        <Fade bottom><h6>{props.wed1}</h6></Fade>
+                        <Fade bottom><p>{props.wep12}</p></Fade>
+                        <Fade bottom><p>{props.wep13}</p></Fade>
+                        <Fade bottom><p>{props.wep14}</p></Fade>
                             <br/>
-                            <h4>demo1</h4>
-                            <h5>inst. name</h5>
-                            <h6>date</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <br/>
-                            <h4>demo1</h4>
-                            <h5>inst. name</h5>
-                            <h6>date</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                        </div>
+                            <Fade bottom><h4>{props.we2}</h4></Fade>
+                            <Fade bottom><h5>{props.wel21}</h5></Fade>
+                            <Fade bottom><h6>{props.wed2}</h6></Fade>
+                            <Fade bottom><p>{props.wep22}</p></Fade>
+                            <Fade bottom><p>{props.wep23}</p></Fade>
+                            <Fade bottom><p>{props.wep24}</p></Fade>
+                           
+                        </div></Fade>
+
+                        <Fade bottom><div className="profilemaincard-lhs-about col-12 mt-3 py-2 px-3">
+                        <Fade bottom><h2>Interest & Hobbies </h2><br/></Fade>
+                            <div className="row justify-content-center">
+                                { interest.map(hobbies =>(<Fade bottom><h6 className="profilecardmain-interest-btn px-4 py-2">{hobbies}</h6></Fade>))}
+                               
+                            </div>
+                        </div></Fade>
                         
                     </div> 
                 </div>
             </div>
-        </div>
+        </div></Fade>
      );
 }
  
