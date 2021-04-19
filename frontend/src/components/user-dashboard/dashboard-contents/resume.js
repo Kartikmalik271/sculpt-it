@@ -163,6 +163,7 @@ const onSubmit = e => {
         <Profileheadcard name={first_name_global} status={status_global} phone={phone_global} city= {city_global} linkedin={linkedin_global} email={email_global}/>
         <button type="button" className="btn modal-btn-half mt-4 bg-primary mx-2" data-toggle="modal" data-target="#EditProfile">Edit Profile</button>
         <button type="button" className="btn modal-btn-half mt-4 bg-danger" data-toggle="modal" data-target="#Register">View Resume</button>
+        <p style={{color:'grey'}}>(* alignment may be disturbed in mobile view (download it to previw original) )  </p>
 
         <ProfileMainCard  about={about_global} 
                           we1= {we1_global}

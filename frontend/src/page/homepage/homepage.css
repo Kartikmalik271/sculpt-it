@@ -2,11 +2,10 @@
     .main-navbar{
         color: white;
         
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        z-index: 100;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        z-index: 100000;
     }
-
 .main-navbar .nav-item{
     padding: 10px;
 }
@@ -298,6 +297,10 @@
     .team{
         padding-bottom: 50px;
     }
+    .team-section .footerlinks:hover {
+       color:#388697
+    }
+
     .team .team-heading{
         text-align: center;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -312,6 +315,7 @@
     }
     .team-section .team-lhs img{
         box-shadow: 5px 5px 10px rgb(32, 32, 32);
+        height: 150px;
     }
     .team-section .team-rhs .team-name{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -329,7 +333,7 @@
     @media (max-width:767px){
         .team-section .team-lhs img{
             box-shadow: 5px 5px 10px rgb(32, 32, 32);
-            border-radius: 50%;
+            height: 180px;
             margin-bottom: 30px;
         } 
         .team-section .team-rhs p{
@@ -351,17 +355,13 @@
     
     padding: 8px;
     outline: none;
-    border:1px solid rgb(104, 103, 103);
-    border-radius: 10px;
     margin: 10px;
-
 }
 .footer-container .footer-form textarea{
     
     padding: 8px;
     outline: none;
-    border:1px solid rgb(104, 103, 103);
-    border-radius: 10px;
+
     margin: 10px;
 }
 

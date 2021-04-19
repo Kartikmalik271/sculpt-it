@@ -11,9 +11,7 @@ const NewLeftSideBar = ({logout,isAuthenticated}) => {
   const onClick = e => {
     e.preventDefault();
     logout();
-    if (isAuthenticated)
-      return null
-    else
+    if (!isAuthenticated)
      return <Redirect to="/"/>;
 };
   

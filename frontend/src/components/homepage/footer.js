@@ -1,11 +1,21 @@
 import React from 'react'; 
 
 import Fade from 'react-reveal/Fade'
+import { useAlert} from 'react-alert'
+import {TextField} from '@material-ui/core'
 
 
 
 const Footer = () => {
+    const alert = useAlert()
 
+    const onSubmit = e => {
+        e.preventDefault();
+        alert.success('feedback sent ');
+   
+    }
+   
+    
     
     return ( 
     <React.Fragment>    
@@ -15,10 +25,10 @@ const Footer = () => {
              
                     <div className="footer-form col-12 col-md-4 mt-4 pb-4">
                     <Fade bottom><h2 className="ml-3">FeedBack:</h2></Fade>
-                            <form>
-                            <Fade bottom><input type="text" className="col-11" name="name" id="name" placeholder="Your Name" required="required"/><br/></Fade>
-                            <Fade bottom><input type="email" className="col-11"name="email" id="email" placeholder="Your E-mail"required="required"/><br/></Fade>
-                            <Fade bottom><textarea rows="5" className="col-11"name="message" id="message" placeholder="Message"required="required"/><br/></Fade>
+                            <form onSubmit={e =>onSubmit(e)}>
+                            <Fade bottom><TextField label="Your name" variant="outlined"type="text" className="col-11" name="name" id="name" placeholder="Your Name" required="required"/><br/></Fade>
+                            <Fade bottom><TextField label="Your E-mail" variant="outlined"type="email" className="col-11"name="email" id="email" placeholder="Your E-mail"required="required"/><br/></Fade>
+                            <Fade bottom><TextField label="message"  multiline variant="outlined" rows="5" className="col-11"name="message" id="message" placeholder="Message"required="required"/><br/></Fade>
                             <Fade bottom><button type="submit" className="col-11 "className="btn footer-form-btn-half">Submit</button></Fade>
                             </form>
                     </div>

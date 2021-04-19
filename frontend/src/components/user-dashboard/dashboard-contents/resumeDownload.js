@@ -147,14 +147,14 @@ else
               <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content">
                   <div class="modal-header">
-                      <h6 class="modal-title" id="exampleModalLongTitle">Resume</h6>
+                      <h6 class="modal-title" id="exampleModalLongTitle" style={{color:'white'}}>Resume</h6>
                       <button type="button" class="close" style={{color:'white'}} data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
                   <div class="modal-body">
                   <div className="resume-box col-12 "  ref={componentRef} >
-            <div className="row">
+            <div className="row ">
                 <div className="resumebox-headbox col-12">
                     <div className="row align-items-center">
                         
@@ -323,17 +323,10 @@ else
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
-                     
-                
-                
             </div>
         </div>
         <ReactToPrint
-        trigger={() => <button className="btn btn-printout bg-success">Print this out!</button>}
+        trigger={() => <button className="btn btn-printout bg-secondary"style={{color:'white'}}>Download</button>}
         content={() => componentRef.current}
       />
                           </div>

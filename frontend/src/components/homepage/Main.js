@@ -66,7 +66,6 @@ const Main = ({ login, isAuthenticated}) => {
                                                                 <CSRFToken/>
                                                                 <Fade bottom><TextField 
                                                                                     label="username" 
-                                                                                    
                                                                                     className="col-12 col-md-8 login-input my-1"   
                                                                                     type="text" 
                                                                                     name="username" 

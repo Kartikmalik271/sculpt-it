@@ -1,6 +1,6 @@
-import React,{ useState, useEffect,Fragment } from 'react';
+import React,{ useState, useEffect } from 'react';
 
-import { BrowserRouter as Router, Route, Switch ,Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Homepage from './page/homepage/homepage';
 import './App.css'
 import Dashboard from './page/DashBoard/Dashboard';
@@ -12,6 +12,7 @@ import {provider, Provider} from 'react-redux'
 import store from './store'
 import Layout from './hocs/layout'
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import PrivateRoute from './hocs/PrivateRoute'
 
 function App() {
   const scrollTop = () =>{
@@ -45,7 +46,7 @@ const options = {
               <Layout>
 
                 <Route exact path="/" component={Homepage} />
-                <Route  path="/dashboard" component={Dashboard}/>
+                <PrivateRoute  path="/dashboard" component={Dashboard}/>
                 
               </Layout>
           </Router>

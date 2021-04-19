@@ -25,14 +25,14 @@ const AboutCard = ({loaduser}) => {
                             <Slide bottom><h5 className="homepage-about-head-circle">About</h5></Slide>
                             </div>
                             <Slide bottom><h2>About Us</h2></Slide>
-                            <Slide bottom><p>portfolio.com is a all in one solution for managing and making professional and presentable portfolio of users. You can also share and compare your profile with others</p></Slide>
+                            <Slide bottom><p>Sculpt-it. is a all in one solution for managing and making professional/presentable portfolio. You can create your professional resume and download it, the feature of writing and sharing different articles makes it different from the other resume generatoor websites.</p></Slide>
                         </div></Roll>
                         <Roll right><div className="col-12 col-md-4 m-3  homepage-aboutcard-rhs">
                             <div className="row justify-content-center">
                                 <h5 className="homepage-about-head-circle">Project</h5>
                             </div>
                             <Slide bottom><h2>About Project</h2></Slide>
-                            <Slide bottom><p>this is a project is a complete full stack web development project, techs used in this mainly React.js, bootstrap for frontend part and Node.js,MongoDB  for backend part </p></Slide>
+                            <Slide bottom><p>this project is a complete full stack web development project, techs used in making of this are React.js & bootstrap for frontend, django & rest api for backend, MongoDB for Database and Redux for making api calls between react and django </p></Slide>
                         </div></Roll>
                     </div>
                 </div>  
@@ -41,20 +41,20 @@ const AboutCard = ({loaduser}) => {
                         <div className="aboutus-ournumbs-counters col-12 col-md-6 mb-5">
                             <div className="row justify-content-center align-items-center">
                                 <div className="aboutus-ournumbs-counter1 col-6 px-0">
-                                    <h2 style={{fontWeight:'200',fontFamily:'cursive'}}>
+                                    <h2 >
                                         <Counter timer={20}/>
                                             
                                         <br/>Posts
                                     </h2>
                                 </div>
                                 <div className="aboutus-ournumbs-counter2 col-6 px-0">
-                                    <h2 style={{fontWeight:'200',fontFamily:'cursive'}}>
+                                    <h2 >
                                     <Counter timer={count}/>
                                         <br/>Users
                                     </h2>
                                 </div>
                                 <div className="aboutus-ournumbs-counter3 col-6 px-0">
-                                    <h2 style={{fontWeight:'200',fontFamily:'cursive'}}>
+                                    <h2 >
                                     <Counter timer={4}/>
                                         <br/>Team Members
                                     </h2>

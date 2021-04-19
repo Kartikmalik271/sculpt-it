@@ -185,7 +185,9 @@ class UserArticleDetails(APIView):
 
     def delete(self, request, id):
         articles = self.get_object(id)
-        articles.delete()
-               
+        articles.delete()     
+        
+           
         return Response({'success':'deleted'})
        
+
